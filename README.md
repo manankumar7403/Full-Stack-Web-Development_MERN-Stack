@@ -31,7 +31,7 @@ This repository contains materials and projects covering HTML, CSS, and more. Di
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/manankumar7403/Full-Stack-Web-Development_MERN-Stack.git
-   cd FSWD
+   cd Full-Stack-Web-Development_MERN-Stack
    ```
 2. Open with VS Code or any preferred editor.
 
