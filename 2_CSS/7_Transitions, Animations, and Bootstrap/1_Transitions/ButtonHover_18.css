@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: #272727;
+}
+
+a {
+    width: 220px;
+    height: 80px;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ff0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 80px;
+    /* vertical space b/w baseline of one line of text and baseline of the next line of text within the same element. */
+
+    position: relative;
+    transition: all 0.5s;
+}
+
+a::before, a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    z-index: -1;
+    opacity: 0;
+}
+/* CODE ABOVE: TO CREATE THE SMALL YELLOW CIRCLES. */
+
+/* This CSS block styles two pseudo-elements, a:before and a:after, which are positioned on the left and right sides of the anchor and serve as animated elements.
+content: '' creates an empty pseudo-element.
+position: absolute positions the pseudo-element absolutely within the anchor.
+top: 50% vertically centers the pseudo-element.
+width and height define the dimensions of the pseudo-element.
+background-color sets the background color to yellow (#ff0).
+border-radius: 50% creates a circular shape.
+transform: translateY(-50%) further centers the pseudo-element vertically.
+transition: all 0.3s defines a transition effect for all properties with a duration of 0.3 seconds.
+z-index: -1 positions the pseudo-elements behind the anchor's content.
+opacity: 0 sets the initial opacity to 0, making the pseudo-elements invisible. */
+
+
+a::before {
+    left: 0;
+    box-shadow: -100px 0 0 #ff0;
+}
+/* (x-offset: horizontal -> shadow will be on the right side of the box)
+    (y-offset: vertical -> shadow will be below the box)
+    (negative x-offset: horizontal -> shadow will be on the left side of the box)
+    (negative y-offset: vertical -> shadow will be on top of the box)
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.)
+    (spread radius: positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur))
+    (color: gives the color)   */
+
+/* This CSS block styles the a:before pseudo-element, which is the left side animated element.
+left: 0 positions the pseudo-element on the left edge of the anchor.
+box-shadow: -100px 0 0 #ff0 adds a yellow box shadow that initially creates a yellow bar on the left side (-100px horizontally). */
+
+a::after {
+    right: 0;
+    box-shadow: 100px 0 0 #ff0;
+}
+/* This CSS block styles the a:after pseudo-element, which is the right side animated element.
+right: 0 positions the pseudo-element on the right edge of the anchor.
+box-shadow: 100px 0 0 #ff0 adds a yellow box shadow that initially creates a yellow bar on the right side (100px horizontally). */
+
+a:hover::before {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 30px 0 0 #ff0;
+    opacity: 1;
+}
+/* This CSS block styles the a:before pseudo-element when the anchor is hovered over.
+left: 50% positions the pseudo-element at the center horizontally.
+transform: translateX(-50%) translateY(-50%) centers the pseudo-element vertically.
+box-shadow: 30px 0 0 #ff0 moves the yellow bar to the center (30px horizontally) on hover.
+opacity: 1 sets the opacity to 1, making the pseudo-element fully visible on hover. */
+
+a:hover::after {
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+    box-shadow: -30px 0 0 #ff0;
+    opacity: 1;
+}
+/* This CSS block styles the a:after pseudo-element when the anchor is hovered over.
+right: 50% positions the pseudo-element at the center horizontally.
+transform: translateX(50%) translateY(-50%) centers the pseudo-element vertically.
+box-shadow: -30px 0 0 #ff0 moves the yellow bar to the center (30px horizontally) on hover, but in the opposite direction (left).
+opacity: 1 sets the opacity to 1, making the pseudo-element fully visible on hover. */
+
+a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff0;
+    border-radius: 8px;
+    transform: scale(0);
+    transition: all 0.3s;
+    z-index: -1;
+}
+/* This CSS block styles the inner <span> element, which is initially hidden and serves as part of the animation.
+position: absolute positions the span absolutely within the anchor (a-> anchor tag).
+top: 0 and left: 0 position the span at the top-left corner of the anchor, covering the entire anchor.
+width: 100% and height: 100% make the span the same size as the anchor.
+background-color: #ff0 sets the background color to yellow.
+border-radius: 8px rounds the corners of the span.
+transform: scale(0) initially scales the span down to 0, making it invisible.
+transition: all 0.3s defines a transition effect for all properties with a duration of 0.3 seconds.
+z-index: -1 positions the span behind the anchor's content. */
+
+a:hover span {
+    transform: scale(1);
+    transition-delay: 0.4s;
+}
+/* This CSS block styles the inner <span> element when the anchor is hovered over.
+transform: scale(1) scales up the span to full size, making it visible.
+transition-delay: 0.4s adds a delay of 0.4 seconds to the transition, creating a timing effect where the span appears after a slight delay when the anchor is hovered. */
+
+a:hover {
+    color: #262626;
+    transition-delay: 0.4s;
+}
+/* This CSS block styles the anchor itself when it is hovered over.
+color: #262626 changes the text color to dark gray (#262626) on hover.
+transition-delay: 0.4s adds a delay of 0.4 seconds to the transition, synchronizing it with the appearance of the inner <span> element. */

@@ -1,0 +1,122 @@
+/* (*) is a Universal Selector which selects all the elements */
+/* * {
+    font-style: italic;
+} */
+
+/* class */
+/* .red-border {
+    background-color: cyan;
+    border: 5px solid red;
+} */
+
+/* id */
+/* #lorem-text1 {
+    font-weight: bold;
+} */
+
+/* Grouping selector */
+/* .red-border, #lorem-text1, h1 {
+    font-style: italic;
+} */
+
+/* Nested selector */
+/* header h1 {
+    background-color: rgb(255, 0, 0);
+} */
+
+/* You can also select rgba (red-green-blue-alpha).
+Alpha Specifies the opacity or transparency of the color, ranging from 0 (completely transparent) to 1 (completely opaque).
+In some programming contexts, you might also see the alpha value specified as a percentage from 0% (completely transparent)
+to 100% (completely opaque). */
+
+/* header h1 {
+    background-color: rgba(55, 209, 25, 0.5);
+} */
+
+/* You can also use hex values to specify a color */
+/* header h1 {
+    background-color: #2d20a13d;
+} */
+/* here 2d is for red, 20 is for green, a1 is for blue, and 3d is for alpha. */
+
+/* One more such color type is hsl (hue, saturation, lightness) */
+/* Hue (H): Hue represents the type of color itself, such as red, green, blue, etc. It is measured in degrees on a color wheel,
+with values ranging from 0 to 360. For example, 0 degrees represents red, 120 degrees represents green, and 240 degrees represents blue.
+Values between these degrees represent intermediate colors. */
+
+/* Saturation (S): Saturation determines how vivid or intense the color is. It is measured as a percentage and ranges from 0%
+(completely desaturated, i.e., grayscale) to 100% (fully saturated, i.e., vivid and colorful). */
+
+/* Lightness (L): Lightness controls the brightness of the color. It is also measured as a percentage, with 0% being completely
+black and 100% being completely white. Values in between represent various shades of the color. */
+
+/* header h1 {
+    background-color: hsl(200, 40%, 50%);
+    width: 50%;
+} */
+
+
+/* UNITS IN CSS */
+/* 1) Absolute unit
+px unit
+px unit is fixed in size no matter what screen size you choose. That's why the px
+unit is always preferred for borders because borders are also kept fixed across
+all screen sizes. */
+
+/* 2) Percentage unit
+px unit is fixed in size no matter what screen size you choose. That's why the px
+unit is always preferred for borders because borders are also kept fixed across
+all screen sizes.
+
+3) Relative unit
+Relative to font size:
+    em unit
+        the em unit is always relative to the font size of its immediate parent. 1em
+        == to the size of the parent's font size. The default font size is 16px if not
+        overridden, let's say in the parent element the font size is 48px then in the
+        child element 1em == 48px.
+
+    rem unit (r stands for root em)
+        and unlike em it's always relative to the root font size no matter what font
+        size it's very next parent element has. if the root has redefined font-size like
+        60px then 1rem == 60px in child. */
+
+/* Relative to view port/document
+    vw and vh units
+        vw stands for the viewport width which means vw is always relative to the
+        1% of the width of root, irrespective of parent element's width. So, if 1vw ==
+        1% then 100vw == 100% of the viewport width.
+
+        Similarly vh stands for viewport height like vw it's also relative to the 1%
+        height of root/document. */
+
+
+/* header {
+    font-size: 32px;
+} */
+
+/* header h1 {
+    background-color: hsl(200, 40%, 50%); */
+    /* width: 10em; */
+    /* So now font is 32*10=320 px */
+
+    /* As we haven't defined the font size in the root element (HTML), therefore it will be 16px by default. */
+    /* Therefore, font is 16*10=160px */
+    /* width: 10rem;
+} */
+
+/* ------------------------- */
+
+header h1 {
+    background-color: hsl(200, 40%, 50%);
+    font-size: 10vw;
+}
+
+img {
+    width: 10vw;
+}
+
+/* IMPORTANT:
+
+Viewwidth and viewhieght work according to the size of the screen
+Percentage works according to the size of the parent. */

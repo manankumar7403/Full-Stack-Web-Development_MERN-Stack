@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    border: 3px solid #262626;
+    padding: 40px 80px;
+    position: relative;
+    color: #262626;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+a::before {
+    content: 'Button';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(5);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+a:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}

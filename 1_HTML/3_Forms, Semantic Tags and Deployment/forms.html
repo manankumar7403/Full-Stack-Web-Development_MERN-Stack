@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill your info</title>
+</head>
+<body>
+    <h1>Fill out this form</h1>
+    <!-- submit.html is a different file you could create to store the information. action="" takes the info and user to the specified
+        location after clicking submit-->
+
+        <!-- Input type is to specify the kind of input you want to take -->
+
+        <!-- label is an inline element so anything written in it will appear in box form in front of it. -->
+
+        <!-- If we provide label for="username" and "username" is provided as id in input, then both label and input are binded together and
+        when you click on "Your Name", you enter the box in front of it. -->
+
+        <!-- name is specified to make sure that there is only 1 value selected. For example, if we specify name="tshirtSize"
+        for small, medium, and large labels, we would only be able to choose one value for tshirtSize. -->
+
+            <!-- value is used to assign the value to the label when it is chosen and submitted. For example if, you choose tshirtSize as small
+            and submit without using the value attribute, the tshirtSize would submit tshirtSize=on. If you specify value as value=small
+            then upon submitting you will see tshirtSize=small. -->
+
+    <!-- Could specify form action="submit.html" -> could create a file submit.html to save the responses. -->
+
+    <form action="">
+        <label for="username">Your Name</label>
+        <input id="username" type="text" name="username">
+        <br><br>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="yourUsername@email.com">
+        
+        <!-- placeholder is used for background imprint. -->
+        
+        <br><br>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+        <br><br>
+        <label for="fav_color">Your Favourite Color</label>
+        <input id="fav_color" type="color" name="color">
+        <br><br>
+        <label for="date">Date of Birth</label>
+        <input id="date" type="date" name="date">
+        <br><br>
+        <label for="file">Select</label>
+        <input id="file" type="file" name="file">
+        <br><br>
+        <label for="small">Small</label>
+        <input id="small" name="tshirtSize" type="radio" value="small">
+        <br>
+        <label for="medium">Medium</label>
+        <input id="medium" name="tshirtSize" type="radio" value="medium">
+        <br>
+        <label for="large">Large</label>
+        <input id="large" name="tshirtSize" type="radio" value="large">
+        <br><br>
+        <input type="reset">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgrey;
+}
+
+p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+h2 {
+    font-weight: normal;
+    color: #888;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #888;
+    margin-block: 10px;
+    padding-top: 20px
+}
+
+.username {
+    color: #212121;
+}
+
+
+.container {
+    width: 70%;
+    display: flex;
+    gap: 20px;
+    margin-inline: auto;
+    /* For positioning the container as center. */
+
+    margin-block: 20px;
+    /* to bring down the container (top and bottom margin) */
+
+}
+
+.card {
+    background-color: white;
+    box-shadow: 4px 4px 4px #ccc;
+    /* (4px -> horizontal offset: shadow will be pushed 4 pixels to the right of the element.)
+    (4px -> vertical offset: shadow will be pushed 4 pixels down from the element.)
+    (4px -> blur radius: determines how blurred or spread out the shadow is.)
+    (#ccc -> color of the shadow: shade of gray (#ccc).) */
+    /* Using the shadow to separate the left and the right colum. */
+}
+
+.left-column {
+    width: 35%;
+}
+
+.right-column {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+}
+
+.image-box .username {
+    position: absolute;
+    /* We specified .image-box position relative and then .image-box .username position relative so that the username gets on the image. */
+
+    bottom: 10px;
+    left: 10px;
+}
+
+ul {
+    margin-block: 20px;
+    /* used to define margin of top and bottom. */
+
+    list-style: none;
+    /* Removes the bullets of unordered list. */
+}
+
+hr {
+    border: 0.5px solid #eee;
+}
+
+ul > li {
+    margin-top: 8px;
+    /* to separate the li's from top */
+}
+
+.icon-text {
+    display: flex;
+    /* Makes sure the icon and icon text are inline to each other */
+
+    gap: 10px;
+    align-items: center;
+    /* make sure the icon and icon text are in same line */
+}
+
+.icon-text h3 {
+    padding-top: 2px;
+    /* Skills and Languages heading and icon were not inline. */
+}
+
+i {
+    color: teal;
+}
+
+.progress-bar {
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-block: 8px;
+    /* defines top and bottom margin */
+}
+
+.progress-bar .progress {
+    background-color: teal;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    padding-block: 2px;
+}
+
+.progress-bar .lang_progress {
+    background-color: teal;
+    border-radius: 20px;
+    height: 20px;
+}
+    /* Haven't provided a text in lang_progress, the width is 0, so tried specifying the height */
+    /* The reason why setting `width` instead of `height` for `.progress-bar .lang_progress` doesn't work is that the `width` property alone doesn't define the
+    visible dimensions of an element in the same way that height does.
+    
+    When you set width: 20px;, you are defining the width of the progress bars, but since there's no content or visible content area defined inside these elements,
+    they essentially collapse to a width of 0 pixels, making them effectively invisible.
+
+    To make the progress bars visible, you need to define both width and height, and ensure that there's some content or a background that can be displayed within those
+    dimensions. For progress bars, the typical approach is to use the width property to represent the progress level and the height property to specify the thickness of
+    the progress bar. */
+
+.subtext {
+    color: black;
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.left-desc, .card-container {
+    margin: 20px;
+}
+
+.skills {
+    margin-block: 10px;
+    /* bringing down the skills section from the top hr by using margin inline which defines top and bottom margin */
+}
+
+.languages {
+    margin-block: 10px;
+}
+
+.badge {
+    background-color: teal;
+    color: white;
+    padding: 2px 4px;
+    /* (top bottom, left right) */
+
+    font-size: 0.7rem;
+    border-radius: 4px;
+    margin-right: 1px;
+}
+
+
+.date {
+    color: teal;
+}

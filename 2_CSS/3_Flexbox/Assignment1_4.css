@@ -1,0 +1,56 @@
+/* Importing varela round from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&family=Varela+Round&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+    display: flex;
+    /* the parent is flex because it will keep all 4 of the content-boxes. */
+
+    flex-wrap: wrap;
+    /* flex items break into multiple lines (here, rows).  */
+
+    width: 60%;
+    /* the container holding all 4 of the content-boxes will occupy 80% width of the page */
+
+    margin: 100px auto;
+    /* (top-bottom, left-right) */
+
+    row-gap: 60px;
+
+}
+
+
+.box {
+    flex-basis: 50%;
+    /* sets the initial main size (width) of a flex item. */
+
+    display: flex;
+    /* child is flex because it will keep icon and icon text in the same line */
+
+    gap: 20px;
+    /* gap between icon and icon text */
+
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-right: 80px;
+}
+
+i {
+    color: orange;
+}

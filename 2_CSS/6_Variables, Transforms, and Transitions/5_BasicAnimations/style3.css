@@ -1,0 +1,71 @@
+:root {
+    --button-color: #013a01;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px 80px;
+    transform: translate(-50%, -50%);
+    /* The button is aligned w.r.t it's top-left edge (according to page size), then we have to align the button by it's own height and width */
+
+    font-size: 2rem;
+    border: 5px solid var(--button-color);
+    background: none;
+    cursor: pointer;
+    color: var(--button-color);
+    transition: 1s;
+    position: relative;
+
+    overflow: hidden;
+    /* As right 200% and scale(2) in button::before, scale(4) in button:hover::before makes it big */
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* Z-Index is used to stack HTML elements in a web page so that the elements appear as lying one above another or give 3D/shadow effect. */
+    /* z-index: -1; is used here to ensure that the background created by the button::before pseudo-element is displayed behind the main content of the button,
+    creating a specific visual effect for the button.
+    Click Me WOULD BE VISIBLE USING THIS ELSE NOT AS SAME BG COLOR OF TRANSITION BG AND CLICK ME TEXT*/
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 200%;
+    /* the button would be stretched from 2 directions: left and top -> initial width is 0.
+    Basically, if we give top 0 then it would stick to the top of original button (like parent) -> button as used in line 15*/
+
+    transform: scale(2);
+    transform-origin: left;
+    /* transform will start from left. */
+    background: var(--button-color);
+    transition: 1s;
+    
+    border-radius: 50%;
+    /* Making it a bit circular */
+}
+
+/* button::before is stacked on button.
+Using z-index: -1, the 'button::before' will go 'behind' button to make the 'Click Me' visible. */
+
+
+button:hover {
+    color: white;
+}
+
+button:hover::before {
+    transform: scale(4);
+}

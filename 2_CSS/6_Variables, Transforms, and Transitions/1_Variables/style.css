@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    /* includes border content margin and padding */
+
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* width: 200px; */
+    /* aspect-ratio: 1 / 1; */
+    /* means width / height
+    Now width is 200px so height = 200px. If aspect-ratio: 1 / 2; -> width is 200px and height is 400px */
+
+    /* width: calc(100% - 80px); */
+    /* width of the container will be 100% of the screen - 80px */
+
+    /* aspect-ratio: 1 / 1;
+    border: 2px solid red;
+    margin-inline: auto; */
+    /* margin-inline: auto makes sure that left and right margins are equal. */
+
+    /* width: max(50%, 300px); */
+    width: min(100%, 800px);
+    aspect-ratio: 1 / 1;
+    border: 2px solid red;
+    margin-inline: auto;
+}
+
+.box {
+    display: inline-block;
+    /* boxes appear in the same line */
+
+    width: calc(200px / 4);
+    height: min(40px, 20%);
+    border: 2px solid green;
+}

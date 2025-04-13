@@ -1,0 +1,19 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* .main-button:hover ~ .bottom-line {
+    background-color: lightblue;
+}
+
+.main-button:hover ~ .top-line {
+    background-color: red;
+} */
+
+/* ~ is for any child -> makes sure that sibling, in lower order (html) are related. */
+
+/* If you want that you want to work on sibling just below you can use + instead of ~ */
+
+.main-button:hover + .top-line {
+    background-color: lightblue;
+}

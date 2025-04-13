@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    border: 2px solid green;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+}
+
+.left {
+    flex-basis: 40%;
+}
+
+.right {
+    /* flex-basis: 60%; */
+    /* specifies the initial length of a flexible item */
+
+    flex-grow: 1;
+    /* specifies how much the item will grow relative to the rest of the flexible items inside the same container
+    so here it will automatically take the remaining 60% of the width aviailable after specifying the left column. */
+}

@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    background-color: black;
+    position: fixed;
+}
+
+nav ul li i {
+    margin-right: 10px;
+}
+/* Separating the home icon with "home". */
+
+ul {
+    list-style: none;
+    text-align: end;
+    padding: 30px;
+}
+
+li {
+    color: white;
+    display: inline;
+    font-size: 2rem;
+    padding-inline: 20px;
+}
+
+.hero-left {
+    display: inline-block;
+    width: 60%;
+    margin-top: 20vh;
+    margin-left: 10vw;
+}
+
+.hero-image {
+    margin-top: 20vh;
+    margin-right: 20px;
+    width: 20vw;
+    float: right;
+}
+
+.heading {
+    font-size: 3rem;
+}
+
+.subheading {
+    margin-top: 20px;
+}
+
+.cta-explore-more {
+    margin-top: 20px;
+    padding: 20px 60px;
+    /* (padding: top bottom) */
+}
+
+footer {
+    height: 100vh;
+}

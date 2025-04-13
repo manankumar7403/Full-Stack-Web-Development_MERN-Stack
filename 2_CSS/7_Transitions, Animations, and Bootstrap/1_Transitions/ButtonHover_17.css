@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: #707070;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: transparent;
+    border: 1px solid #ff0;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+a::before {
+    content: 'button';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #363636;
+    color: #ff0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+a:hover::before {
+    left: 100%;
+    /* current position is considered as left and then goes to 100% right.
+    If left is -100%, moves from current position to left*/
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+a::after {
+    content: 'button';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #363636;
+    color: #ff0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0) rotateY(0deg);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+a:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}

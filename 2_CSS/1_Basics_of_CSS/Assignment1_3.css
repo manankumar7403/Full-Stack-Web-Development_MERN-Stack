@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* `*` selector:
+   - `*` is a universal selector that targets all HTML elements on the page.
+   - `padding: 0;` and `margin: 0;` set the margin and padding of all elements to zero. This is often used to reset the default
+      spacing provided by browsers, ensuring a consistent starting point for styling. */
+
+
+.card {
+    width: 530px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 0;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+ /*- `width: 530px;` sets the width of elements with the "card" class to 530 pixels.
+   - `margin: auto;` centers the element horizontally within its parent container.
+   - `margin-top: 100px;` adds a top margin of 100 pixels to the element.
+   - `padding: 0;` sets the padding of the "card" elements to zero.
+   - `background-color: white;` sets the background color of "card" elements to white.
+   - `border: 5px solid black;` adds a solid black border with a width of 5 pixels around the "card" element.
+   - `border-radius: 5px;` adds rounded corners to the "card" element, creating a slightly curved appearance. */
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+ /*- `width: 100%;` makes the image take up 100% of the width of its container (the "card" element), ensuring that it scales proportionally.
+   - `height: auto;` maintains the aspect ratio of the image while resizing it based on the width. */
+
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.p1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.p2 {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.p3 {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: rgb(0, 123, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+   /* - `color: white;` sets the text color to white.
+   - `padding: 10px 20px;` provides padding inside the button element, with 10 pixels of padding on the top and bottom and
+      20 pixels on the left and right.
+   - `border: none;` removes the default border from the button.
+   - `border-radius: 5px;` adds rounded corners to the button.
+   - `cursor: pointer;` changes the cursor to a pointer when hovering over the button, indicating it's clickable.
+   - `font-size: 16px;` sets the font size for the button text.
+   - `transition: background-color 0.3s ease;` specifies a smooth transition effect for the `background-color` property when the
+      button is hovered over.
+
+      0.3s: This specifies the duration of the transition, which is 0.3 seconds. It determines how long the transition effect will
+      take to complete when the property changes.
+      ease: This is the timing function for the transition. The ease timing function starts slowly, accelerates in the middle,
+      and then slows down again at the end of the transition. It creates a smooth and natural-looking transition. */
+
+
+.button:hover {
+    background-color: rgb(0, 86, 179);
+}
+
+/* - `.button:hover` targets the button when it is hovered over.
+- `background-color` changes the background color to a darker shade of blue when the button is hovered, creating a hover effect. */
+

@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(214, 99, 38);
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    transition: all 300ms linear;
+}
+
+a::after {
+    content: '>>';
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    opacity: 0;
+    transition: all 300ms linear;
+}
+
+a:hover {
+    padding-right: 30px;
+}
+
+a:hover::after {
+    opacity: 1;
+    right: 30px;
+}
+
+
+
+
+/* text-decoration: none;: Removes the default underline decoration from links.
+text-align: center;: Centers the text horizontally.
+padding: 20px;: Adds padding around the button text.
+font-size: 20px;: Sets the font size.
+background-color: rgb(214, 99, 38);: Sets the background color to a specific shade of orange.
+font-weight: bold;: Makes the text bold.
+border-radius: 10px;: Rounds the corners of the button.
+color: white;: Sets the text color to white.
+position: relative;: Positions the button relatively within its container.
+transition: all 300ms linear;: Specifies a smooth transition effect for all style changes with a duration of 300 milliseconds and a linear timing function.
+
+Arrow Styles (a::after):
+a::after: This styles a pseudo-element that represents the ">>" arrow.
+content: '>>';: Adds the ">>" content to the pseudo-element.
+position: absolute;: Positions the arrow absolutely within the button.
+top: 20px; right: 40px;: Sets the initial position of the arrow.
+opacity: 0;: Initially makes the arrow invisible by setting opacity to 0.
+transition: all 300ms linear;: Specifies a smooth transition effect for all style changes of the pseudo-element with a duration of 300 milliseconds and a linear timing function.
+Button Hover Styles (a:hover):
+
+a:hover: These styles apply when the button is hovered over.
+padding-right: 30px;: Increases the right padding of the button, effectively pushing the text to the left, creating space for the arrow.
+
+Arrow Hover Styles (a:hover::after):
+a:hover::after: These styles apply to the arrow when the button is hovered over.
+opacity: 1;: Makes the arrow visible by setting opacity to 1.
+right: 30px;: Adjusts the position of the arrow to the right. */

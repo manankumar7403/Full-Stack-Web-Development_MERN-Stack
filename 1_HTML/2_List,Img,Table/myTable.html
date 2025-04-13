@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Table</title>
+    <style>
+        /* tr is table row and td is table column */
+        table,td,th {
+            border: 1px solid black;
+            border-collapse:collapse; /*For avoiding double border around the table*/
+        }
+        thead{
+            background-color: blanchedalmond;
+        }
+        tbody{
+            background-color: lightcyan;
+        }
+        tfoot{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Manan</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>Riya</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>abc</td>
+                <td>92</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>290</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

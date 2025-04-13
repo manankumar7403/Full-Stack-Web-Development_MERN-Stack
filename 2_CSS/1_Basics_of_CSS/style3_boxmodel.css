@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* This is the basic structure of the box model as used in almost all websites.
+If need to change the margin and padding, you can do so as shown below. */
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 20px solid black;
+    padding: 40px;
+    margin-inline: auto;
+}
+
+/* padding: 20px selects all the 4 sides (top 20px, bottom 20px, left 20px, and right 20px).
+padding: 10px 20px 30px 40px means (padding: top 10px, right 20px, bottom 30px, left 40px) -> clockwise direction starting from the top.
+padding: 10px 20px 30px means (padding: top 10px, left and right 20px, bottom 30px)
+padding: 10px 20px means (padding: top and bottom 10px, left and right 20px)
+padding-inline: 50px; (left and right padding is 50px)
+padding-inline: auto; (space left in the padding would be applied to left and right side -> half to the left and half to the right)
+Alternatively, you can go for padding-left, padding-right etc.
+
+IT'S THE SAME CASE FOR MARGIN. */
+
+/* By default the box-sizing is box-sizing: content-box; which is made up of the content only.
+By specifying box-sizing: border-box; we are including the border and the padding with the content. */
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}

@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 360px;
+    margin: 60px auto;
+}
+
+.number-input {
+    width: 100%;
+    padding: 20px 10px;
+    background-color: black;
+    font-family: monospace;
+    color: white;
+    font-size: 3rem;
+    text-align: end;
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* This is to remove the increase and decrease number arrow buttons that appear right to the number when you use type="number" */
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+    background-color: #ccc;
+    border: 1px solid black;
+    padding-block: 20px;
+    /* top bottom */
+    /* for left and right do padding-inline: ; */
+
+    text-align: center;
+    font-weight: bold;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.orange {
+    background-color: rgb(240, 184, 0);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}

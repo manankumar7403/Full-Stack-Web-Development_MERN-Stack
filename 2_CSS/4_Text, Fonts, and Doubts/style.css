@@ -1,0 +1,87 @@
+body {
+    /* font-size: 32px */
+    font-family: 'Roboto', sans-serif;
+    background-color: wheat;
+}
+
+.container {
+    width: 80%;
+    margin: 50px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    
+    box-shadow: 4px 4px 2px 6px blue, -4px -4px 2px 6px purple;
+    /* (x-offset: horizontal -> shadow will be on the right side of the box)
+    (y-offset: vertical -> shadow will be below the box)
+    (negative x-offset: horizontal -> shadow will be on the left side of the box)
+    (negative y-offset: vertical -> shadow will be on top of the box)
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.)
+    (spread radius: positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur))
+    (color: gives the color)   */
+
+    /* position: relative; */
+}
+
+h1 {
+    color: blueviolet;
+    /* background-color: burlywood; */
+    /* text-align: center; */
+
+    /* text-decoration-line: underline overline; */
+    /* overline and underline */
+
+    /* text-decoration-line: line-through; */
+    /* text-decoration-line: underline;
+    text-decoration-color: cadetblue;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 20px; */
+
+    /* text-decoration: underline double blue 4px; */
+    /* text-transform: capitalize; */
+    /* Makes the first letter of every word capital */
+
+    /* text-transform: lowercase; */
+    /* text-transform: uppercase; */
+
+    /* color: transparent; */
+    /* only the shadow would be visible */
+
+    text-shadow: 2px 2px 4px black;
+    /* (x-offset(horizontal) y-offset(vertical) blur-radius color) */
+
+    font-weight: normal;
+    /* font-family: sans-serif; */
+
+    /* position: relative; */
+    /* working relative to the parent-container as position:relative is defined there */
+    left: 100px;
+    bottom: 10px;
+    display: inline;
+
+    position: absolute;
+    /* working relative to parent-body as parent-relative is commented out. */
+}
+
+p {
+    /* text-align: center; */
+
+    /* text-align: justify; */
+    /* Aligns the test end-to-end*/
+
+    border: 2px dotted red;
+    text-indent: 100px;
+    /* First line starts form 100px */
+
+    letter-spacing: 2px;
+    /* Every letter gets 2px gap */
+
+    line-height: 24px;
+    /* heigh b/w lines */
+
+    word-spacing: 8px;
+    /* space b/w words */
+
+    font-weight: 900;
+    font-style: italic;
+}

@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #607d8b;
+}
+/* display: flex; sets the body to use flexbox layout.
+justify-content: center; horizontally centers the content.
+align-items: center; vertically centers the content.
+min-height: 100vh; sets the minimum height of the body to 100% of the viewport height, ensuring that the content is vertically centered. */
+
+.container {
+    position: relative;
+    top: 50px;
+}
+/* position: relative; sets the positioning context of the container to be relative to its normal position in the document flow.
+top: 50px; shifts the container 50 pixels down from its normal position, creating some spacing from the top of the page. */
+
+.cup {
+    position: relative;
+    width: 280px;
+    height: 300px;
+    background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    /* position: relative; sets the positioning context of the cup element to be relative to its normal position.
+    width: 280px; sets the width of the cup to 280 pixels.
+    height: 300px; sets the height of the cup to 300 pixels.
+    background: linear-gradient(to right, #f9f9f9, #d9d9d9); creates a linear gradient background for the cup, transitioning from a light 
+    gray (#f9f9f9) on the left to a slightly darker gray (#d9d9d9) on the right.
+    when you apply background: linear-gradient(to right, #f9f9f9, #d9d9d9); to an HTML element, it will have a horizontal linear gradient background 
+    that fades from light gray to slightly darker gray as you move from the left to the right side of the element.
+
+    border-bottom-left-radius: 45%; and border-bottom-right-radius: 45%; apply border-radius properties to round the bottom corners of the cup, 
+    giving it a curved appearance */
+}
+
+.top {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+    border-radius: 50%;
+}
+/* Increases the cup height(top) a little */
+/* position: absolute; positions this element absolutely relative to its nearest positioned ancestor.
+top: -30px; moves this element 30 pixels above its normal position.
+width: 100%; makes the element span the full width of its container.
+height: 60px; sets the height of the top rim element.
+background: linear-gradient(to right, #f9f9f9, #d9d9d9); creates a linear gradient background for the top rim, similar to the cup, transitioning from light gray to 
+slightly darker gray.
+border-radius: 50%; applies a border-radius property to create a circular appearance for the top rim. */
+
+
+.circle {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 50px;
+    background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* position: absolute; positions this element absolutely within its container.
+top: 5px; sets the element 5 pixels from the top of its container.
+left: 10px; sets the element 10 pixels from the left of its container.
+width: calc(100% - 20px); calculates the width of the element, making it span the full width of its container minus 20 pixels (10 pixels on each side).
+height: 50px; sets the height of the liquid representation.
+background: linear-gradient(to left, #f9f9f9, #d9d9d9); creates a linear gradient background for the liquid, transitioning from light gray to slightly darker gray.
+border-radius: 50%; applies a border-radius to make the liquid have a circular appearance.
+overflow: hidden; hides any content(tea) that might overflow the circular shape. */
+
+.tea {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#c57e65, #e28462);
+    border-radius: 50%;
+}
+
+.handle {
+    position: absolute;
+    right: -70px;
+    top: 40px;
+    width: 160px;
+    height: 180px;
+    border: 25px solid #dcdcdc;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-radius: 50%;
+    transform: rotate(42deg);
+}
+/* position: absolute; positions this element absolutely within its container.
+right: -70px; moves the handle 70 pixels to the right from its normal position.
+top: 40px; sets the handle 40 pixels from the top of its container.
+width: 160px; sets the width of the handle.
+height: 180px; sets the height of the handle.
+border: 25px solid #dcdcdc; applies a border with a solid gray color (#dcdcdc).
+border-left: 25px solid transparent; creates a triangular shape on the left side of the handle by using transparent borders.
+border-bottom: 25px solid transparent; creates a triangular shape at the bottom of the handle by using transparent borders.
+border-radius: 50%; rounds the entire handle, giving it a curved appearance.
+transform: rotate(42deg); rotates the handle by 42 degrees, positioning it at an angle. */
+
+.plate {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 200px;
+    background: linear-gradient(to right, #f9f9f9, #e7e7e7);
+    border-radius: 50%;
+    box-shadow: 0 35px 35px rgba(0, 0, 0, 0.2);
+}
+/* position: absolute; positions this element absolutely within its container.
+bottom: -50px; moves the plate 50 pixels below its normal position.
+left: 50%; horizontally centers the plate relative to its container.
+transform: translateX(-50%); fine-tunes the horizontal positioning, ensuring that the plate is centered horizontally.
+width: 500px; sets the width of the plate.
+height: 200px; sets the height of the plate.
+background: linear-gradient(to right, #f9f9f9, #e7e7e7); creates a linear gradient background for the plate, transitioning from light gray to slightly darker gray.
+border-radius: 50%; rounds the plate, giving it a circular appearance.
+box-shadow: 0 35px 35px rgba(0, 0, 0, 0.2); adds a subtle box shadow for depth and visual effect. */
+
+/* BOX SHADOW */
+/* (x-offset: horizontal -> shadow will be on the right side of the box)
+    (y-offset: vertical -> shadow will be below the box)
+    (negative x-offset: horizontal -> shadow will be on the left side of the box)
+    (negative y-offset: vertical -> shadow will be on top of the box)
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.)
+    (spread radius: positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur))
+    (color: gives the color)   */
+
+.plate::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to left, #f9f9f9, #e7e7e7);
+}
+
+.plate::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: radial-gradient(rgba(0, 0, 0, 0.2) 25%, transparent, transparent);
+    border-radius: 50%;
+}
+/* These pseudo-elements, ::before and ::after, are used to create additional decorative elements inside the plate.
+content: ''; is used to generate empty content for these pseudo-elements.
+position: absolute; positions these pseudo-elements absolutely within the plate.
+They have varying sizes and positions (top, left, right, bottom) to create concentric rings and gradients within the plate, adding to the visual detail and complexity.
+The background properties create linear and radial gradients with different colors, enhancing the plate's appearance. */
+
+.vapour {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 0 20px;
+}
+/* position: relative; positions this element relative to its normal position.
+display: flex; sets the display to flex, allowing its children to be aligned horizontally.
+z-index: 1; places this element above other elements on the z-axis.
+padding: 0 20px; adds horizontal padding to the steam container. */
+
+.vapour span {
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s);
+}
+/* position: relative; positions each steam particle relative to its normal position.
+bottom: 50px; moves each particle 50 pixels up from its normal position.
+display: block; sets the display to block for each particle.
+margin: 0 2px 50px; adds margin to separate the particles vertically.
+min-width: 8px; sets a minimum width for each particle.
+height: 120px; sets the height of each particle.
+background: #fff; sets the background color of each particle to white.
+border-radius: 50%; gives each particle a circular appearance.
+animation: animate 5s linear infinite; applies an animation named animate with a 5-second duration, linear timing function, and infinite repetition.
+opacity: 0; initially sets the opacity of each particle to 0.
+filter: blur(8px); applies a blur effect to each particle.
+animation-delay: calc(var(--i) * -0.5s); sets a unique animation delay for each particle based on its --i value. This delay creates a staggered effect 
+for the steam particles, making them appear at different times. */
+
+
+@keyframes animate {
+     0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+     }
+
+     15% {
+        opacity: 1;
+     }
+
+     50% {
+        transform: translateY(-150px) scaleX(5);
+     }
+
+     95% {
+        opacity: 0;
+     }
+
+     100% {
+        transform: translateY(-300px) scaleX(10);
+     }
+}
+/* 0%: The particle starts with no transformation and zero opacity.
+15%: The opacity of the particle becomes 1 (fully visible).
+50%: The particle moves up by 150 pixels and scales horizontally by a factor of 5, creating the rising and spreading effect.
+95%: The opacity becomes 0 again.
+100%: The particle continues to move upward by 300 pixels and scales horizontally by a factor of 10. */

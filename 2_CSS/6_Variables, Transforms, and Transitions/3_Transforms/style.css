@@ -1,0 +1,50 @@
+.box {
+    width: 200px;
+    height: 200px;
+    color: white;
+    background-color: #ccc;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+.original {
+    background-color: purple;
+
+    /* transform: scale(0.8, 0.4); */
+            /* same as scaleX scaleY */
+    /* transform: scaleX(0.8) scaleY(0.4); */
+            /* scale() : Affects the size of the element. This also applies to the font-size, padding, height, and width of an element too. It's also a a shorthand
+                      function for the scaleX and scaleY functions. */
+
+
+    /* transform: skew(-30deg, 5deg); */
+               /* skewX() and skewY() : Tilts an element to the left or right, like turning a rectangle into a parallelogram.
+               skew() is a shorthand that combines skewX() and skewY by accepting both values. */
+
+    
+    /* transform: translate(50px, 100px); */
+    /* It is different from position: relative; as position: relative; leaves initial space or changes the stacking order.
+    This is like drawing on a canvas and then arranging them as per the specified geometric properties (skew, translate etc.) */
+
+              /* translate() : Moves an element sideways or up and down. */
+    
+
+    /* transform: rotate(45deg); */
+                /* rotate() : Rotates the element clockwise from its current position. */
+
+    
+    /* You can use multiple gemoetrical properties at once */
+    /* transform: rotate(45deg) scale(0.8) skew(20deg); */
+
+    /* Using particular axis */
+    /* transform: rotateX(60deg); */
+
+    transition: 1s ease-out;
+
+}
+
+.original:hover {
+    transform: rotate(60deg);
+}
+

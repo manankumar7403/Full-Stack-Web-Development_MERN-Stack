@@ -1,0 +1,143 @@
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2017/12/15/19/07/ecommerce-3021581_640.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: lightblue;
+}
+
+/* background-attachment: fixed;: This property determines how the background image behaves when the content of the webpage is scrolled. 
+When set to fixed, the background image remains fixed in place, and it does not move when you scroll the content. This creates a "parallax" effect, 
+where the background image appears stationary while the content scrolls over it.
+
+background-size: cover;: This property specifies how the background image should be sized to cover the entire background area. 
+When set to cover, the image is scaled and cropped as necessary to completely cover the background area without leaving any empty space. 
+This ensures that the background image fills the entire viewport (the visible area of the webpage) without distortion. */
+
+section {
+    max-width: 480px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* `max-width: 480px;`
+- Sets the maximum width of the form container to 480 pixels. This helps to control the width of the form and ensures it doesn't become too wide on larger screens.
+
+`margin: 0 auto;`
+- Centers the form horizontally within its parent container. It sets the left and right margins to "auto," causing the form to be horizontally centered on the page.
+
+`padding: 20px;`
+- Adds 20 pixels of padding to the interior of the form container. Padding provides space between the content (such as labels and input fields) and the border
+of the form.
+
+`border: 1px solid gray;`
+- Adds a 1-pixel solid border around the form container. The border color is set to a shade of gray.
+
+`border-radius: 5px;`
+- Rounds the corners of the form container, giving it a slightly rounded appearance with a 5-pixel radius. */
+ 
+
+h1, p {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+ 
+/* `display: block;`
+- Changes the default display style of `<label>` elements to "block." This makes each label appear on a new line, ensuring that input elements appear below their
+corresponding labels.
+
+`margin-bottom: 5px;`
+- Adds a 5-pixel margin at the bottom of each `<label>`. This creates vertical spacing between labels and the elements they label. */
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="month"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+/* `input[type="text"], input[type="tel"], input[type="email"], input[type="month"] {`
+    - This selector targets several input types (`text`, `tel`, `email`, and `month`) in your HTML document.
+
+`width: 100%;`
+    - Sets the width of these input elements to 100% of their parent container's width. This makes them expand to fill the available space.
+    
+`padding: 8px;`
+    - Adds 8 pixels of padding inside the input elements. Padding provides space between the input's content and its border.
+    
+`margin-bottom: 10px;`
+    - Adds a 10-pixel margin at the bottom of these input elements, creating vertical spacing between them.
+    
+`border: 1px solid #ccc;`
+    - Adds a 1-pixel solid border to these input elements with a gray (#ccc) color.
+    
+`border-radius: 3px;`
+    - Rounds the corners of these input elements with a 3-pixel radius. */
+
+
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+
+
+/* Making sure the payment methods appear in the same line (overriding display: block;) by using display: inline */
+label[for="Credit card"],
+label[for="Debit card"],
+label[for="UPI"],
+label[for="Netbanking"],
+label[for="Cash"] {
+  display: inline;
+  margin-right: 10px;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: rgb(0, 123, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* `padding: 10px 20px;`
+- Adds 10 pixels of padding to the top and bottom and 20 pixels of padding to the left and right of these buttons.
+
+`border: none;`
+- Removes the border around these buttons.
+
+`border-radius: 5px;`
+- Rounds the corners of these buttons with a 5-pixel radius.
+
+`cursor: pointer;`
+- Changes the mouse cursor to a pointer when hovering over these buttons, indicating that they are clickable.
+
+`font-weight: bold;`
+- Sets the font weight of the text on these buttons to bold for emphasis. */
+
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: rgb(0, 86, 179);
+}
+
+/* `input[type="submit"]:hover, input[type="reset"]:hover {`
+    - This selector targets the submit and reset buttons when they are hovered over by the mouse pointer and sets the bg color. */

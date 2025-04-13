@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Tags</title>
+    <link rel="stylesheet" href="Assignment_3.css">
+</head>
+<body>
+    <header>
+        <h1>Semantic Tags in HTML!</h1>
+        <hr>
+    </header>
+    <main>
+        <nav>
+            <h2>Content</h2>
+            <ol>
+                <li><a href="#Definition">Definition</a></li>
+                <li><a href="#table">Semantic Tags in HTML</a></li>
+                <li><a href="#Explanation">Explanation of Semantic Tags</a></li>
+                <li><a href="#Visual">Visual Representation of Semantic Tags in HTML document</a></li>
+            </ol>
+        </nav>
+        <hr>
+
+        <h2 id="Definition">Definition</h2>
+        <p>
+            <b><i>What are Semantic Elements</i></b>
+            <br>
+            A semantic element clearly describes its meaning to both the browser and the developer.
+            <br>
+            Examples of <b>non-semantic</b> elements: &lt;div&gt and &lt;span&gt - Tells nothing about its content, just by reading it we can't determine what it defines.
+            <br>
+            Examples of <b>semantic</b> elements: &lt;form&gt, &lt;table&gt, and &lt;article&gt - Clearly defines its content.
+            <br><br>
+            Many web sites contain HTML code like: &lt;div id="nav"&gt, &lt;div class="header"&gt, &lt;div id="footer"&gt to indicate navigation, header, and footer.
+            <hr>
+        </p>
+
+        <h2 id="table">Semantic Tags in HTML</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><a href="#main">&lt;main&gt</a></td>
+                <td>Specifies the main content of a document</td>
+            </tr>
+            <tr>
+                <td><a href="#header">&lt;header&gt</a></td>
+                <td>Specifies a header for a section or a document</td>
+            </tr>
+            <tr>
+                <td><a href="#footer">&lt;footer&gt</a></td>
+                <td>Defines a footer for a document or a section</td>
+            </tr>
+            <tr>
+                <td><a href="#section">&lt;section&gt</a></td>
+                <td>Defines a section in a document</td>
+            </tr>
+            <tr>
+                <td><a href="#article">&lt;article&gt</a></td>
+                <td>Defines independent, self-contained content</td>
+            </tr>
+            <tr>
+                <td><a href="#aside">&lt;aside&gt</a></td>
+                <td>Defines content aside from the page content</td>
+            </tr>
+            <tr>
+                <td><a href="#figure">&lt;figure&gt</a></td>
+                <td>Specifies self-contained content, like illustrations, diagrams, photos, code, listings, etc.</td>
+            </tr>
+            <tr>
+                <td><a href="#figcaption">&lt;figcaption&gt</a></td>
+                <td>Defines a caption for a &lt;figure&gt element</td>
+            </tr>
+            <tr>
+                <td><a href="#nav">&lt;nav&gt</a></td>
+                <td>Defines a navigation link</td>
+            </tr>
+            <tr>
+                <td><a href="#summary">&lt;summary&gt</a></td>
+                <td>Defines a visible heading for a &lt;details&gt element</td>
+            </tr>
+        </table>
+        <hr>
+        <br>
+
+        <h2 id="Explanation">Let's learn about each Semantic element in detail!</h2>
+        <ul>
+            <li id="main"><h3>&lt;main&gt</h3>
+            <p>
+                The &lt;main&gt tag specifies the main content of a document.There must not be more than one &lt;main&gt  element in a document. The &lt;main&gt  element must NOT be a descendant of an &lt;article&gt, &lt;aside&gt, &lt;footer&gt, &lt;header&gt, or &lt;nav&gt element.
+            </p>
+            </li>
+            <li id="header"><h3>&lt;header&gt</h3>
+            <p>
+                It represents a container for introductory content or a set of navigational links. It may contain one or more heading(h1..h6), logo,icon or authorship information. You can have several &lt;header&gt elements in one HTML document.However, &lt;header&gt cannot be placed within a  &lt;footer&gt, &lt;address&gt or another &lt;header&gt element.
+            </p>
+            </li>
+            <li id="footer"><h3>&lt;footer&gt</h3>
+            <p>
+                It defines a footer for a document or section. You can have several &lt;footer&gt elements in one document. &lt;footer&gt element typically contains
+                <ul>
+                    <li>authorship information</li>
+                    <li>copyright information</li>
+                    <li>contact information</li>
+                    <li>sitemap</li>
+                    <li>back to top links</li>
+                    <li>related documents</li>
+                </ul>
+            </p>
+            </li>
+            <li id="section"><h3>&lt;section&gt</h3>
+            <p>
+                The &lt;section&gt element defines a section in a document.
+                <br>
+                Examples of where a &lt;section&gt element can be used:
+                <ul>
+                    <li>Chapters</li>
+                    <li>Introduction</li>
+                    <li>News items</li>
+                    <li>Contact information</li>
+                </ul>
+            </p>
+            </li>
+            <li id="article"><h3>&lt;article&gt</h3>
+            <p>
+                The &lt;article&gt element specifies independent, self-contained content.
+                <br>
+                An article should make sense on its own, and it should be possible to distribute it independently from the rest of the web site.
+                <br>
+                Examples of where the &lt;article&gt element can be used:
+                <ul>
+                    <li>Forum posts</li>
+                    <li>Blog posts</li>
+                    <li>User comments</li>
+                    <li>Product cards</li>
+                    <li>Newspaper articles</li>
+                </ul>
+            </p>
+            </li>
+            <li id="aside"><h3>&lt;aisde&gt</h3>
+            <p>
+                The &lt;aside&gt element defines some content aside from the content it is placed in (like a sidebar).
+                <br>
+                The &lt;aside&gt content should be indirectly related to the surrounding content.
+            </p>
+            </li>
+            <li id="figure"><h3>&lt;figure&gt</h3>
+            <p>
+                The &lt;figure&gt tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+            </p>
+            </li>
+            <li id="figcaption"><h3>&lt;figcaption&gt</h3>
+            <p>
+                The &lt;figcaption&gt tag defines a caption for a &lt;figure&gt element. The &lt;figcaption&gt element can be placed as the first or as the last child of a &lt;figure&gt element.
+                <br>
+                The &lt;img&gt element defines the actual image/illustration. 
+            </p>
+            </li>
+            <li id="nav"><h3>&lt;nav&gt</h3>
+            <p>
+                The &lt;nav&gt element defines a set of navigation links.
+            </p>
+            </li>
+            <li id="summary"><h3>&lt;summary&gt</h3>
+            <p>
+                Defines a visible heading for a &lt;details&gt element.
+            </p>
+            </li>
+        </ul>
+
+        <br><br>
+        <hr>
+        <h2 id="Visual">A look into proper HTML Semantics</h2>
+        <img width="300px" src="https://assets.hongkiat.com/uploads/html-5-semantics/document-outline-example.jpg" alt="Visual Representation of the HTML Semantics">
+        <hr>
+        <br>
+    </main>
+    <footer>
+        <p>Created by Manan Kumar</p>
+        <p>©️All rights reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="paymentForm.css">
+</head> 
+<body>
+    <h1>Payment Form</h1>
+    <p><b>Fill the necessary details and click on submit.</b></p>
+    <hr>
+    <section>
+        <h3>CONTACT DETAILS</h3>
+        <form action="">
+            <label for="fname">First Name:</label>
+            <input id="fname" type="text" name="fname">
+            <br><br>
+            <label for="lname">Last Name:</label>
+            <input id="lname" type="text" name="lname">
+            <br><br>
+            <label for="phone">Phone Number:</label>
+            <input id="phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" minlength="10" maxlength="10" inputmode="numeric" required>
+            <!-- pattern will work like regular expressions and would take 10 digits between 0 to 9.
+            placeholder will give the background imprint.
+            minlength and maxlength will make sure the telephone number is of exact 10 digits.
+            inputmode will make sure the entered value is numeric.
+            required will make sure that it's a mandatory field to submit the form. -->
+            <br><br>
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" placeholder="abc@gmail.com">
+            <br><br>
+            <label for="address">Address:</label>
+            <input id="address" type="text" name="address">
+            <br><br>
+            <hr>
+    
+            <h3><b>PAYMENT METHOD</b></h3>
+            <label for="Credit card">Credit Card</label>
+            <input id="Credit card" type="radio" name="paymentOption">
+            <label for="Debit card">Debit Card</label>
+            <input id="Debit card" type="radio" name="paymentOption">
+            <label for="UPI">UPI</label>
+            <input id="UPI" type="radio" name="paymentOption">
+            <label for="Netbanking">Netbanking</label>
+            <input id="Netbanking" type="radio" name="paymentOption">
+            <label for="Cash">CoD</label>
+            <input id="Cash" type="radio" name="paymentOption">
+            <br><br>
+    
+            <label for="name">Name on Card:</label>
+            <input id="name" type="text" name="name">
+            <br><br>
+    
+            <label for="cardno">Card Number:</label>
+            <input id="cardno" type="text" name="cardno" pattern="[0-9]{16}" placeholder="xxxx-xxxx-xxxx-xxxx" minlength="16" maxlength="16" inputmode="numeric" required>
+            <br><br>
+    
+            <label for="month">Expiration Month and Year:</label>
+            <input id="month" type="month" name="month">
+            <br><br>
+    
+            <label for="cvv">Card CVV:</label>
+            <input id="cvv" type="text" name="cvv" pattern="[0-9]{3}" placeholder="CVV" minlength="3" maxlength="3" inputmode="numeric" required>
+            <br><br>
+            <input type="reset">
+            <input type="submit">
+        </form>
+    </section>
+</body>
+</html>

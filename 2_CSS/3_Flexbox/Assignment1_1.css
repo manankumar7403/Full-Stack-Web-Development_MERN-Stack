@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Tinos', serif;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 50px;
+    position: relative;
+    margin-inline: auto;
+    margin-block: 180px;
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h3 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.duration {
+    color: rgba(77, 74, 74, 0.9);
+    padding-top: 2px;
+}
+
+p {
+    padding: 15px;
+    text-align: center;
+}
+
+.amount {
+    padding-top: 10px;
+    text-align: center;
+}
+
+hr {
+    background-color: rgba(210, 208, 208, 0.726);
+    height: 0.1rem;
+    border: none;
+}
+
+.box-1, .box-2, .box-3 {
+    width: 20%;
+    box-shadow: 10px 10px 10px lightgrey, -10px -10px 10px lightgrey;
+    /* (x-offset: horizontal -> shadow will be on the right side of the box)
+    (y-offset: vertical -> shadow will be below the box)
+    (negative x-offset: horizontal -> shadow will be on the left side of the box)
+    (negative y-offset: vertical -> shadow will be on top of the box)
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.)
+    (color) */
+}
+
+.box-2 h2 {
+    background-color: rgba(57, 53, 53, 0.834);
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    background-color: rgba(11, 175, 11, 0.822);
+    border: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outside-bg {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(200, 195, 195, 0.342);
+}
+
+button:hover {
+    background-color: rgb(6, 70, 16);
+}

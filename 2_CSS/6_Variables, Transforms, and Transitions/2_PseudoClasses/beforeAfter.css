@@ -1,0 +1,14 @@
+p {
+    font-size: 3rem;
+}
+
+
+p::before {
+    content: 'This is before';
+}
+
+/* Specifying the content is important to see/visualize. */
+
+p::after {
+    content: 'This is after';
+}

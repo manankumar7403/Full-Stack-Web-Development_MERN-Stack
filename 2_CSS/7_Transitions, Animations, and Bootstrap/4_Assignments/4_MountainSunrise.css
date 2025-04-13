@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.background-image {
+    background-image: url(4_MountainSunrise.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.text span:nth-child(odd) {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.text:hover span:nth-child(odd) {
+    transform: translate(0, -0.5em);
+}
+
+.text span:nth-child(even) {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.text:hover span:nth-child(even) {
+    transform: translate(0, 0.5em);
+}
+
+
+
+
+/* REVISION BY ANUJ BHAIYA */
+/* em unit */
+/* em is relative to the font size of the parent element.
+1em = current font size of parent element. */
+
+
+/* rem unit */
+/* The "rem" unit in CSS stands for "root em" or "relative em." Unlike the "em" unit, which is relative to the font size of the current element, the "rem" 
+unit is relative to the font size of the root element of the document, which is typically the <html> element.
+1rem is equal to the font size of the root element (usually set in the browser's default styles).
+If you specify a property like font-size: 1.5rem;, it means the font size will be 1.5 times the font size of the root element.
+If you specify a property like margin: 2rem;, it means the margin will be 2 times the font size of the root element.
+The key advantage of using "rem" units is that they are not affected by the font size of parent elements. This makes them particularly useful for creating 
+consistent and easily maintainable designs, especially in responsive web design, as changes to the font size at the root level will cascade down to all elements 
+that use "rem" units.
+
+For example, if you set the root font size to 16px, 1rem will be 16px. If you later decide to change the root font size to 20px (for better accessibility or 
+responsive design), all elements using "rem" units will automatically adjust to this new size. */
+
+
+
+
+

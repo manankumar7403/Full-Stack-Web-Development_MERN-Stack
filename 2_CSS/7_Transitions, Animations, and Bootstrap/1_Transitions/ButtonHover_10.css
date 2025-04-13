@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+    border: 3px solid white;
+    padding: 40px 80px;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+a::before {
+    content: 'Yeah!';
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F44336;
+    transform: translateY(-100%);
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover::before {
+    transform: translateY(0);
+}

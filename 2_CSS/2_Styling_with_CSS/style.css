@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.red-border {
+    border: 2px solid red;
+}
+
+.header-text {
+    background-color: burlywood;
+}
+
+/* p{
+    display: inline;
+    margin: 40px;
+} */
+/* Inline elements are not affected by top and bottom margins. */
+/* You also can't define the width and height of inline elements. They only take the space upto their content. */
+
+
+/* p {
+    display: block;
+    margin: 40px;
+    width: 400px;
+} */
+/* Converting to block will make sure that top and bottom margins are also applied. */
+
+/* a {
+    width: 400px;
+} */
+/* No effect of width as it is an inline element. */
+
+a {
+    width: 400px;
+    display: inline-block;
+}
+/* Converting to inline-block, making the width applicable. */
+
+p {
+    display: inline-block;
+    margin: 40px;
+    width: 400px;
+}
+
+img {
+    width: 400px;
+
+    display: none;
+    /* Use it to make the image invisible. */
+}
+
+/* Images are also defined as inline elements with the exception of width and height.
+So, essentially it won't shift to a new line but width and heigth are effective on it.
+Inline-block element. */

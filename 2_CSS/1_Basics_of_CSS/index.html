@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index1</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- This is an example of internal CSS -->
+    <style>
+        h1 {
+            color: purple;
+        }
+
+        h1 {
+            color: rgb(86, 202, 132);
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- This is an example of inline CSS -->
+    <h1 style="background-color: cyan;">Hi, how are you?</h1>
+    <p style="color: red;">Hi, I am a red paragraph.</p>
+</body>
+</html>
+
+<!-- Priority:
+1) Inline CSS has the highest priority.
+2) If external CSS command (<link rel="stylesheet" href="style.css">) is written before the internal CSS then internal CSS would be given
+   preference. If external CSS is written below internal CSS, then external CSS would be given preference. -->
+
+<!-- It is advisable to use external CSS and inline CSS (only where required) and avoid using internal CSS. -->

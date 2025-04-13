@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwIvLPTewaYjdyVfnex9VHwNNT8XM_oRQyoBrOK03&s" alt="Java"
+    width="400px" height="200px">
+
+    <!-- It is advisable to just specify the width and not the height as the intrinsic aspect ratio automatically sets the desired height,
+    but if we specify the height by ourselves, we render the aspect ratio, resulting in a squished image. -->
+    
+    <!-- The 'srcset' is a string that identifies one or more image candidate strings
+    separated using commas (,) each specifying image resources to use under
+    given circumstances. -->
+
+    <!-- <img src="https://via.placeholder.com/400x200" alt="image"
+    srcset="https://via.placeholder.com/400 1x,
+            https://via.placeholder.com/800 2x,
+            https://via.placeholder.com/1200 3x"> -->
+
+    <!-- This was according to the DPR. -->
+
+    <!-- <img src="https://via.placeholder.com/400x200" alt="image"
+            srcset="https://via.placeholder.com/400 400w,
+                    https://via.placeholder.com/800 800w,
+                    https://via.placeholder.com/1200 1200w"
+            sizes="(max-width: 400px) 100vw,
+                   (max-width: 800px) 50vw,
+                   33vw"> -->
+
+    <!-- This just tells which image will be loaded depending on the width (use firefox and inspect to run this).
+    If DPR is 1, till 400w we will have 400 pixel image, if DPR is 2, pixels will mutliply by 2 so after 200w, we will start
+    seeing the 400 pixel image.
+
+    Sizes allows you to specify the layout Width of the Image for each of a list of
+    media conditions. This provides the ability to automatically select among
+    different images—even images of different orientations or aspect ratios—as the
+    document state changes to match different media conditions.
+
+    Check the pdf for more.
+    vw - view width
+    100 vw means 100% of the screen.
+    50 vw means 50% of the screen. -->
+
+</body>
+</html>
+
+<!-- Learn about DPR, width, max-width and pixels and do the assignment. -->

@@ -1,0 +1,13 @@
+.info {
+    font-size: medium;
+    background-color: rgb(221, 230, 246);
+    border-left: 5px solid rgba(86, 156, 255, 0.887);
+    padding: 10px;
+}
+
+.warning {
+    font-size: medium;
+    background-color: rgba(248, 198, 198, 0.904);
+    border-left: 5px solid rgba(202, 7, 20, 0.667);
+    padding: 10px;
+}

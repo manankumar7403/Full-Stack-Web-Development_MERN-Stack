@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    background-color: #d44890;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    animation: left-to-right 2s infinite 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes left-to-right {
+    from {
+        transform: translateX(-100px);
+        background-color: burlywood;
+    }
+
+    to {
+        transform: translateX(100px);
+        background-color: blue;
+    }
+}
+/* Instead of using 0% to 100% as used in index and skew files present in the same folder ('2_Animations'), you can use 'from' and 'to'. */

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Mooli', sans-serif;
+}
+
+.container {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 100%;
+    /* defining a single column that spans the entire width of the grid container. */
+
+    row-gap: 30px;
+    background-color: #f1f1f1;
+}
+
+.box {
+    margin: 10px;
+    /* 10px margin from the container */
+
+    display: grid;
+    box-shadow: 3px 4px 10px grey;
+    align-items: start;
+}
+
+#box-2 .text h1 {
+    margin-top: -10px; /* Add a negative margin to move the heading closer to the photo */
+    margin-bottom: 5px;
+}
+
+
+.img img {
+    width: 100%;
+    height: 200px;
+}
+
+.text {
+    font-size: 0.7rem;
+    padding: 10px;
+}
+
+.desc {
+    font-size: 0.9rem;
+    margin-block: 5px;
+}
+
+.date {
+    margin-inline: 5px;
+    color: grey;
+    /* color: rgba(0, 0, 0, 50%); */
+    /* can set the alpha (opacity) to 50% but color grey works */
+}
+
+.subtext {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.btn {
+    text-align: left;
+    margin-block: 10px;
+}
+
+.btn:hover, #cmt:hover {
+    cursor: pointer;
+    background-color: #002ead;
+    transition: 0.2s ease-in-out;
+}
+
+.btn p {
+    border: 2px solid rgba(2, 65, 36, 0.436);
+    padding: 10px 20px;
+    /* top-bottom, left-right */
+}
+
+.comment {
+    text-align: right;
+}
+
+#cmt {
+    background-color: black;
+    margin-inline: 10px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.popular-post {
+    margin-inline: 10px;
+    font-size: 0.6rem;
+    box-shadow: 3px 4px 10px grey;
+}
+
+.popular-post h1 {
+    padding: 20px 10px;
+    background-color: rgba(90, 37, 80, 0.19);
+    border-bottom: 2px solid #f1f1f1;
+}
+
+#popular-photos {
+    height: fit-content;
+    /* to remove the extra space after the tree photo
+    wasted 1 hour to figure this out 😭 */
+}
+
+.small-img {
+    display: flex;
+    margin: 10px 5px;
+}
+
+.small-img img {
+    margin-inline: 5px;
+    width: 20%;
+}
+
+.small-desc {
+    margin-inline: 10px;
+    padding-block: 5px;
+}
+
+.tag {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.tag p {
+    padding: 2px;
+}
+
+.tag p span {
+    background-color: black;
+    color: white;
+    padding-inline: 3px;
+}
+
+@media only screen and (min-width: 641px) {
+    .container {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto auto auto auto;
+        gap: 10px;
+    }
+
+    .tags {
+        margin-top: 10px;
+        grid-column: 2 / 3;    
+        
+        position: relative;
+        bottom: 30vh;
+        /* reducing the gap between 'Popular Posts' and 'Tags'.     */
+    }
+
+    .img img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+
+/* NOT DISPLAYING TAGS IN MOBILE VIEW */
+@media only screen and (max-width: 640px) {
+    .tags {
+        display: none;
+    }
+}

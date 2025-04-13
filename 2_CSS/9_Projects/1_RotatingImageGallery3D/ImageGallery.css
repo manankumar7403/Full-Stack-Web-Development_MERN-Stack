@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    /* Sets the height and width of the box containing all the images.
+    If the value is preserve-3d, the children of the element will be positioned in the 3D-space (i.e. they will appear as 3D).
+    If the value is flat, the children will appear flat (i.e. they won't appear as 3D). */
+
+    animation: animate 20s linear infinite;
+    /* named the animation 'animate' which will go on for 20s in linear timing function, infinitely. */
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+    /* The perspective function is used to create a perspective view for 3D transformations. In this case, it sets a perspective of 1000 pixels.
+    This means that the elements being transformed will appear to have depth and follow a 3D perspective as they rotate.
+    The perspective() CSS function defines a transformation that sets the distance between the user and the z=0 plane, the perspective from which the
+    viewer would be if the 2-dimensional interface were 3-dimensional. */
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    /* The images will appear in center(one at a time at center) and originate from center in 3-D format. */
+
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    /* all the images are positioned to rotate along Y-axis at 45deg and they would be translating at z-axis closer or further to the user by 400px such that
+    they appear in 3-dimension. */
+
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+    /* uptil -webkit-box-reflect: below 0px; we will see an exact image upside-down under the current image. */
+    /* linear-gradient(): This CSS function is used to create a linear gradient background.
+    transparent, transparent, #0004: This gradient consists of three color stops. The first two are transparent, which means there is no reflection at the
+    top of the element. The third color stop is #0004, which is a transparent black color. The #0004 color represents a semitransparent black color
+    (black with 4% opacity).
+    This color is used to create the reflection effect by gradually fading from the element's content to a slightly transparent black color below.
+    In a linear-gradient, you define a gradient that transitions between specified color stops along a linear path. Each color stop can have a color and a position.
+    In this case:
+    The first transparent represents the starting color stop, indicating what color should be at the very beginning of the gradient. In this context,
+    it's transparent, meaning there should be no reflection right at the top of the element.
+    The second transparent serves as an intermediary or midpoint color stop. It acts as a transition point between the initial transparent (no reflection) and the
+    final color stop (#0004). By having this second transparent, you create a gradual transition from no reflection to the actual reflection color (#0004).It
+    essentially controls the smoothness and opacity of the reflection transition.
+    The third color stop #0004 is the final color stop in the gradient. It's #0004, which represents a semitransparent black color. The #0004 color provides the
+    reflection effect by gradually fading from the element's content to a slightly transparent black color below, simulating a reflective surface. */
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* position: absolute; top: 0; left: 0;: Positions the images at the top-left corner of their respective spans.
+    width: 100%; height: 100%;: Makes each image cover the entire span.
+    object-fit: cover;: Ensures that the image covers the entire space within the span without distortion. */
+}
+
+
+/* IMPORTANT: transform-style: preserve-3d
+transform-style: preserve-3d tells the browser that the 3D transformed children of the element it’s set on shouldn’t be flattened into the plane of their
+parent (the element we set transform-style: preserve-3d on). So even intuitively, it kind of makes sense that also setting overflow: hidden on the same
+element would undo this and prevent children from breaking out of the plane of their parent. */
+/* Check out: https://css-tricks.com/things-watch-working-css-3d/#:~:text=transform%2Dstyle%3A%20preserve%2D3d%20tells%20the%20browser%20that%20the,%3A%20preserve%2D3d%20on). */
+
+/* The `transform-style: preserve-3d;` CSS property is used to define how child elements within a container element should inherit and apply 3D transformations.
+This property is particularly important when working with 3D transforms in CSS.
+Here's a detailed explanation of `transform-style: preserve-3d;`:
+
+1. **2D vs. 3D Transforms**: CSS allows you to apply both 2D and 3D transformations to elements. 2D transforms involve translations, rotations, and scaling
+in a flat 2D plane, while 3D transforms add a third dimension, allowing for more complex transformations along the X, Y, and Z axes.
+
+2. **Nested Elements**: When you have nested HTML elements within a container and apply 3D transformations to the container, you have to decide how the child
+elements will interact with these transformations. Do they follow the 3D transformations of the container, or do they remain flat (2D) relative to the viewport?
+
+3. **Flat (2D) vs. 3D Rendering**:
+   - `transform-style: flat;`: This is the default value. Child elements do not inherit 3D transformations from the parent container. They remain flat and do
+   not respond to the parent's 3D transformations.
+   - `transform-style: preserve-3d;`: This value indicates that child elements should inherit and maintain their 3D positioning and transformations
+   relative to the parent container.
+
+4. **Use Cases**:
+   - When you want to create complex 3D scenes or effects where child elements need to participate in the 3D space defined by their parent, you use
+   `transform-style: preserve-3d;`.
+   - If you only want 3D transformations to apply to the parent and not affect the child elements' 3D positioning, you use `transform-style: flat;`.
+
+5. **Example**:
+   Consider a scenario where you have a parent container with 3D transformations applied to it, and within this container, you have child elements
+   (e.g., divs or images). If you set `transform-style: preserve-3d;` on the parent container, the child elements will follow the 3D transformations of the parent.
+   This allows you to create 3D layouts and effects where child elements are part of the 3D scene.
+
+Here's a simple code example to illustrate the difference: */
+
+/* .parent {
+  transform-style: preserve-3d;
+  transform: rotateY(45deg);}
+ Child elements inherit 3D transformations */
+
+/* .child {
+  transform: translateZ(50px);}
+ Applies a 3D translation to the child */
+
+/* In this example, with `transform-style: preserve-3d;`, the `translateZ` transformation applied to the child element will be relative to the 3D rotation of the parent.
+Without `preserve-3d`, the child element would remain flat in the 2D plane and not respond to the parent's rotation.
+
+In summary, `transform-style: preserve-3d;` is a CSS property that allows child elements to inherit and maintain their 3D transformations within a 3D-transformed
+parent container, enabling the creation of complex 3D layouts and effects. */
+
+/* ________________________________________________________________________________________________________________________________________________________________ */
+
+/* IMPORTANT transform:perspective();
+The perspective() CSS function defines a transformation that sets the distance between the user and the z=0 plane, the perspective from which the
+viewer would be if the 2-dimensional interface were 3-dimensional. Its result is a <transform-function> data type.
+Check out: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective */
+
+/* 0% { ... }: This specifies the animation's behavior at the beginning (0% progress) of the animation.
+
+transform: perspective(1000px) rotateY(0deg);: At the start (0% progress), it sets the transformation for the animated element. It applies a perspective and a
+rotateY transformation.
+
+perspective(1000px): The perspective function is used to create a perspective view for 3D transformations. In this case, it sets a perspective of 1000 pixels.
+This means that the elements being transformed will appear to have depth and follow a 3D perspective as they rotate.
+
+rotateY(0deg): This sets the initial rotation along the Y-axis to 0 degrees, effectively starting the element with no rotation.
+
+100% { ... }: This specifies the animation's behavior at the end (100% progress) of the animation.
+
+transform: perspective(1000px) rotateY(360deg);: At the end (100% progress), it sets the transformation for the animated element. It also applies a perspective and
+a rotateY transformation.
+
+perspective(1000px): This remains the same as in the 0% keyframe, maintaining the 3D perspective.
+
+rotateY(360deg): This sets the final rotation along the Y-axis to 360 degrees. This means that the element will complete a full 360-degree rotation around the Y-axis
+by the end of the animation, effectively bringing it back to its original position after completing a full rotation.
+
+In summary, the @keyframes animate rule defines an animation that smoothly transitions an element from a 0-degree Y-axis rotation with a 1000px perspective to a
+360-degree Y-axis rotation with the same 1000px perspective. This animation creates the effect of a continuous 360-degree rotation of the element in 3D space,
+giving the appearance of depth and perspective as it rotates. The perspective property is crucial for creating a 3D effect by defining the depth and viewing perspective
+of the transformation. */
+
+/* _______________________________________________________________________________________________________________________________________________________ */
+/* IMPORTANT: transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px); */
+
+/* transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+
+transform: This property is used to apply 2D and 3D transformations to an element. In this case, it applies two transformations in sequence.
+
+rotateY(): This function is part of CSS's 3D transformation capabilities and rotates an element around the Y-axis. The rotateY() function takes an angle in degrees
+as its argument. rotateY(45deg) rotates the element 45 degrees around the Y-axis.
+
+calc(): This function allows you to perform calculations within CSS property values. In this case, it calculates a rotation angle based on the value of a custom
+CSS variable --i. The formula var(--i) * 45deg calculates the rotation angle in degrees.
+
+var(--i): This is a CSS custom property (variable) that holds a numeric value, presumably representing the index of the element in a sequence. Its value is
+multiplied by 45deg to determine the rotation angle.
+
+translateZ(): This function is used to move an element along the Z-axis in 3D space. It takes a length or percentage value as its argument. In this case,
+translateZ(400px) translates the element 400 pixels along the Z-axis, effectively moving it closer or farther from the viewer. */
+/* _______________________________________________________________________________________________________________________________________________________________ */
+
+/* IMPORTANT: -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004); */
+
+/* -webkit-box-reflect: This is a vendor-specific CSS property for applying reflections to elements. In this case, it's used to create a reflection below the element.
+
+below: Specifies that the reflection should appear below the element.
+
+0px: Indicates the offset of the reflection. In this case, there's no vertical offset; the reflection starts immediately below the element.
+
+linear-gradient(): This CSS function is used to create a linear gradient background.
+
+transparent, transparent, #0004: This gradient consists of three color stops. The first two are transparent, which means there is no reflection at the top of the
+element. The third color stop is #0004, which is a transparent black color. The #0004 color represents a semitransparent black color (black with 4% opacity).
+This color is used to create the reflection effect by gradually fading from the element's content to a slightly transparent black color below.
+
+In summary, the transform property is responsible for rotating and translating the element in 3D space, creating a specific position and orientation for the
+element. The -webkit-box-reflect property is used to add a reflection effect below the element, which enhances the visual 3D effect by simulating a reflective
+surface beneath the element. The combination of these two properties contributes to the overall 3D appearance and interactivity of the element. */

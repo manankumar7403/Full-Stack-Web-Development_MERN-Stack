@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* UTILITY CLASSES */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.hover-link {
+    transition: 0.4s ease-out;
+}
+
+.hover-link:hover {
+    background-color: rgb(185, 255, 255);
+    padding: 2px 6px;
+    /* They will move a bit coz of padding */
+
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    box-shadow: 0 2px 4px #ccc;
+    /* (x-offset: horizontal -> shadow will be on the right side of the box)
+    (y-offset: vertical -> shadow will be below the box)
+    (negative x-offset: horizontal -> shadow will be on the left side of the box)
+    (negative y-offset: vertical -> shadow will be on top of the box)
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.)
+    (spread radius: positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur))
+    (color: gives the color)   */
+    /* Here, we have used x-offset, y-offset, blur radius and color */
+
+    margin-bottom: 6px;
+}
+
+.nav-container {
+    justify-content: center;
+    /* Logo, (Home, Products, Pricing), Sign In -> all 3 appear in the same line */
+
+    padding-block: 8px;
+}
+
+.banner {
+    margin-inline: 20px auto;
+    /* left right */
+}
+
+.banner img {
+    height: 30px;
+    /* sometimes using anchor tag can cause the image height to remain the same but decreasing the width can cut the image, so we use height instead to make the 
+    image small */
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-links ul {
+    /* display: flex; */
+    /* Home, Products, Pricing -> all 3 appear in the same line. Not using here as defined in class flex */
+
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-button {
+    background-color: teal;
+    color: white;
+    padding: 8px 20px;
+    /* top-bottom, left-right */
+
+    border-radius: 50px
+}
+
+.right-menu {
+    margin-inline: auto 20px;
+    /* left right */
+}
+
+.menu-collapse-btn {
+    margin-left: 20px;
+    display: none;
+}
+
+@media only screen and (max-width: 641px) {
+    .menu-collapse-btn {
+        display: inline-block;
+    }
+    .nav-links {
+        display: none;
+    }
+}
+
+
+/* Inline-Like Behavior:
+
+Elements with display: inline-block; will flow within the text content like inline elements. This means they will not start on a new line by default, and 
+they will respect the surrounding content's flow.
+Block-Like Properties:
+
+Unlike purely inline elements, elements with display: inline-block; can have width, height, margins, and padding applied to them, just like block-level elements.
+You can set the width and height of an inline-block element, which isn't possible for purely inline elements.
+Margins and padding will affect the space around an inline-block element, just like they do for block-level elements.
+Multiple Elements on the Same Line:
+
+When you apply display: inline-block; to multiple elements, they will appear on the same line horizontally, as long as there is enough space. If the space is 
+insufficient, they will wrap to the next line.
+Example Use Cases:
+
+display: inline-block; is often used for creating navigation menus or lists of items where you want each item to be horizontally aligned and have a specific width, 
+height, or spacing.
+It can also be used for creating button elements or other inline elements that need to have block-like properties. */

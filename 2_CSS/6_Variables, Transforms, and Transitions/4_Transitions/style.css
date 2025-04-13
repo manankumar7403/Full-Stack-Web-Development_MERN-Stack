@@ -1,0 +1,62 @@
+/* transition : shorthand property for the below 4 properties.
+To create a transition effect, you must specify two things:
+    1) the CSS property you want to add an effect to
+    2) the duration of the effect */
+
+.box {
+    width: 200px;
+    height: 200px;
+    color: white;
+    background-color: #ccc;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+.original {
+    background-color: purple;
+
+    /* transition: 0.6s ease-in; */
+    
+    /* ease - specifies a transition effect with a slow start, then fast, then end slowly(this is default)
+    ease-in - specifies a transition effect with a slow start
+    ease-out - specifies a transition effect with a slow end
+    ease-in-out - specifies a transition effect with a slow start and end */
+
+    /*  IMPORTANT NOTE:------------------------------------------______________________________--------------------------__________________________________
+        You can also define your own values in a cubic-bezier function using `cubic-bezier(n,n,n,n)`:
+        Go to Inspect -> Styles -> Choose the target (here, box original from body) -> go to transition function (which should be written in code) and click on the
+        sigmoid symbol -> Choose the desired transition wave and timimg fucntion -> use click hold the wave and select a desired form to obtain the cubic-bezier
+        equation. Now you can write the code as transition: cubic-bezier(n,n,n,n);  */
+
+
+    /* transition: 2s cubic-bezier(0.19,-1.02, 0.79, 2.05); */
+    /* Chose the in-out-sine and then used the purple dots to stretch the wave to obtain the cubic-bezier equation. */
+    /* Now try this cubic-bezier with other transforms other than rotate. */
+
+    /* transition: 2s ease-in 4s; */
+    /* transition will start after 4s */
+
+    /* transition: 2s ease-in all; */
+    /* all will make sure all changes in hover are taking place */
+
+
+
+    /* Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.
+    - transition-delay : adds a delay after which the transition starts.
+    - transition-duration : is the duration of the transition
+    - transition-property : tells which property should this transition be applied.
+    - transition-timing-function : specifies the speed curve of the transition effect. */
+
+    transition-duration: 2s;
+    transition-delay: 4s;
+    transition-timing-function: linear;
+    transition-property: transform, background-color;
+}
+
+.original:hover {
+    /* transform: rotate(60deg); */
+    transform: scale(0.6);
+    background-color: sandybrown;
+}
+

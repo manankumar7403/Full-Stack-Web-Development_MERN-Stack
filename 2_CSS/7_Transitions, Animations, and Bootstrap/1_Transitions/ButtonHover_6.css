@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 45px;
+    font-family: sans-serif;
+    color: #272727;
+    border: 5px solid #272727;
+    padding: 40px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff200;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform-origin: bottom left;
+    transform: rotate(-90deg);
+    transition: all 1s;
+}
+/* transition: This property is used to specify the transition effect for one or more CSS properties.
+all: It specifies that the transition effect should apply to all CSS properties that are changing. In other words, it applies the same transition duration and
+timing function to all properties that change.
+1s: This is the duration of the transition effect, and it's measured in seconds. In this case, it's set to 1 second. This means that when a CSS property changes,
+it will take 1 second to smoothly transition from its previous state to its new state. */
+
+
+a:hover::before {
+    transform: rotate(0deg);
+}

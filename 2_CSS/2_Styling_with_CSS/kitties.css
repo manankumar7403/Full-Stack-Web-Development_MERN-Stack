@@ -1,0 +1,106 @@
+/* .main {
+    width: 100vw;
+    height: 100vh;
+}
+.top {
+    width: 100%;
+    height: 100px;
+    background-color: lightseagreen;
+}
+.left {
+    width: 60%;
+    height: 100%;
+    background-color: magenta;
+}
+.right {
+    width: 40%;
+    height: 100%;
+    background-color: brown;
+} */
+
+body {
+    background-color: lightpink;
+}
+
+.container {
+    width: 80%;
+    margin-inline: auto;
+    /* will align the image and text in the center */
+    /* margin (top, bottom, left, and right)
+       margin-inline (left and right only) */
+    
+    background-color: rgb(238, 130, 238);
+    /* position: relative; */
+}
+
+.cat-outside {
+    width: 60px;
+    /* position: relative; */
+    
+    /* position: absolute; */
+    /* This works according to the parent whose position is set to relative. */
+
+    left: 20px;
+    /* position: fixed; */
+    /* After using spacer and assigning 200vh to height so we can scroll we fix the image of the outside kitty and
+    it doesn't move when we scroll. */
+
+    position: sticky;
+    top: 100px;
+    /* It will stick to the parent (container) and will move until 100px when we scroll and then will go up with the container. */
+}
+/* relative : A relatively positioned element is an element whose computed position
+value is relative. The top and bottom properties specify the vertical offset from its
+normal position; the left and right properties specify the horizontal offset. */
+
+/* absolute : The element is removed from the normal document flow, and no space is
+created for the element in the page layout. It is positioned relative to its closest
+positioned ancestor (parent) if any; otherwise, it is placed relative to the initial containing
+block. Its final position is determined by the values of top, right, bottom, and left. */
+
+/* To move the position of the outside cat, we can use position. position: static is default, we can set it to position: relative (works
+relatively to the parent container) and then mention where to move the kitty. If we say top:50px then it will move 50px down from the
+current position. If we say left: 50px then it will move 50px to the right from the current position. */
+
+
+.text-box {
+    width: 90%;
+    background-color: white;
+    padding: 60px;
+    border-radius: 10px;
+    /* rounds the border edges */
+}
+
+.kitty {
+    width: 200px;
+
+    float: right;
+    /* The image will float to the right */
+}
+
+.bottom-kitty {
+    width: 200px;
+    float: left;
+}
+
+/* After using .kitty and .bottom-kitty, we can see that the text of the bottom kitty is floating both left but also to the right of the 
+previous image (.kitty). To fix that we use `clear`. */
+/* .bottom-paragraph {
+    clear: right;
+} */
+
+/* .text-wrapper {
+    width: 200px;
+    height: 200px;
+    border: 2px solid red;
+    overflow: auto scroll;
+} */
+/* Overflow is used to maintain the text/image/data that is not able to fit in a box.
+Properties of overflow
+overflow-x overflow-y
+if you put scroll auto then overflow-x is scroll and overflow-y is auto. */
+
+.spacer {
+    height: 200vh;
+    
+}

@@ -1,0 +1,93 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PSEUDO CLASSES */
+/* 1 colon (:) for pseudo class */
+
+/* a {
+    font-size: 4rem;
+}
+
+.click-tag:hover {
+    color: red;
+}
+
+.click-tag:visited {
+    color: yellow;
+} */
+
+/* --------------------------------------------------------------------------------------------------- */
+
+/* li:first-child {
+    background-color: darkgoldenrod;
+}
+
+li:last-child {
+    font-size: 3rem;
+} */
+
+/* IMPORTANT FORMAT: an + b -> For nth child */
+
+/* li:nth-child(4) {
+    background-color: red;
+} */
+
+/* Suppose you want all the even rows red */
+/* li:nth-child(2n) {
+    background-color: red;
+} */
+
+/* Suppose you want all the odd rows greenyellow */
+/* li:nth-child(2n+1) {
+    background-color: greenyellow;
+} */
+
+/* li {
+    list-style: none;
+} */
+    /* to remove the bullets */
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+
+/* PSEUDO ELEMENTS */
+/* 2 colons (::) for pseudo elements */
+
+/* p::first-line {
+    font-size: 2rem;
+} */
+/* Increases the font size of first line to 2rem */
+
+/* p::first-letter {
+    background-color: gray;
+    margin: 20px;
+    font-size: 6rem;
+} */
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #871309;
+    position: relative;
+}
+
+.box::before {
+    content: 'Before';
+    color: white;
+    position: absolute;
+    background-color: green;
+}
+
+.box::after {
+    content: 'After';
+    color: white;
+    position: absolute;
+    background-color: blueviolet;
+}

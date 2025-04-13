@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d44890;
+}
+
+.button {
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    padding: 20px 30px;
+    color: #22d2ef;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    border: 1px solid black;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* // CREATING PSEUDO ELEMENTS */
+.button::before {
+    content: '';
+    position: absolute;
+    /* So we can move it anywhere relative to the parent -> .button */
+
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: green;
+    z-index: -1;
+    /* Using z-index: -1; here and z-index: 1 in .button so that .button::before goes behind .button -> The background
+    color green of.button::before is behind the text color: #22d2ef of .button making the 'Click Me' text visible  */
+
+    transition: 0.8s ease-in-out;
+}
+
+.button:hover::before {
+    left: 0;
+    transform: scale(2);
+}

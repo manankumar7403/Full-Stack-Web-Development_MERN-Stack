@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #E1332D;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 40px 70px;
+    transition: all 0.5s;
+}
+
+a:hover {
+    font-weight: 900;
+    letter-spacing: 10px;
+    border: 8px solid #E1332D;
+}

@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+a { 
+    width: 300px;
+    height: 60px;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.2s;
+    color: white;
+}
+/* This CSS block styles the anchor (<a>) element:
+width: 300px; and height: 60px;: Sets the dimensions of the anchor.
+text-decoration: none;: Removes the default underlines from links.
+background-color: transparent;: Sets the background color to transparent.
+font-size: 20px;: Sets the font size to 20 pixels.
+text-transform: uppercase;: Transforms the text to uppercase.
+letter-spacing: 5px;: Adds spacing between characters.
+text-align: center;: Centers the text horizontally.
+line-height: 60px;: Centers the text vertically by matching the line height to the anchor's height.
+font-weight: bold;: Makes the text bold.
+position: relative;: Positions the anchor relative to its normal flow, allowing absolute positioning of pseudo-elements.
+transition: all 0.2s;: Adds a 0.2-second transition to all properties, creating a smooth hover effect.
+color: white;: Sets the text color to white. */
+
+a::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    background-color: #20caff;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.2s;
+    transform-origin: top;
+}
+/* This CSS block styles the a:before pseudo-element:
+content: '';: Creates an empty pseudo-element.
+position: absolute;: Positions the pseudo-element absolutely within the anchor.
+top: -3px; and left: -3px;: Offsets the pseudo-element slightly to create a border-like effect around the anchor.
+width: 100%; and height: 100%;: Makes the pseudo-element cover the entire anchor.
+background-color: #20caff;: Sets the background color to a blue-green color.
+z-index: -1;: Positions the pseudo-element behind the anchor's content.
+mix-blend-mode: multiply;: Sets the blending mode to "multiply," affecting how this pseudo-element interacts with the underlying content.
+transition: all 0.2s;: Adds a 0.2-second transition to all properties of the pseudo-element.
+transform-origin: top;: Specifies the transformation origin at the top edge of the pseudo-element. */
+/* `mix-blend-mode: multiply;` is a CSS property and value combination that specifies how the content of an element should blend with the content of its parent
+ or underlying elements. In this case, it sets the blending mode to "multiply."
+When you apply `mix-blend-mode: multiply;` to an element, it alters the way the colors of that element interact with the colors of the elements behind it 
+(the parent or underlying elements). Here's how it works:
+- The "multiply" blending mode multiplies the color values of the top element with the color values of the elements beneath it.
+- When the color values of both the top and underlying elements are darker (i.e., less than 1), the result becomes even darker. This mode is often 
+used to create shading and shadow effects.
+- When one of the color values is white (1), it doesn't change the underlying colors, effectively making that portion of the top element transparent.
+- When one of the color values is black (0), it completely "erases" the underlying colors, making that portion of the top element opaque.
+This blending mode is especially useful for creating various visual effects, such as applying shadows or darkening areas of an image. It allows for non-destructive
+and flexible color interactions between elements on a web page, enhancing the design possibilities. */
+
+a::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: #ff7675;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.2s;
+    transform-origin: bottom;
+}
+/* Same as a::before but positioned slightly below and to the right of the anchor. */
+
+a:hover::before {
+    top: -6px;
+    left: 0;
+    transform: perspective(1000px) rotateX(75deg);
+}
+
+a:hover::after {
+    top: 6px;
+    left: 0;
+    transform: perspective(1000px) rotateX(-75deg);
+}
+
+a:hover {
+    color: #272727;
+}
+
+/* a:hover:before: Styles the a:before pseudo-element when the anchor is hovered. It moves it above the anchor (top: -6px;), centers it horizontally (left: 0;), 
+and applies a perspective and rotation transformation, creating a 3D effect.
+a:hover:after: Styles the a:after pseudo-element when the anchor is hovered. It moves it below the anchor (top: 6px;), centers it horizontally (left: 0;), 
+and applies a perspective and rotation transformation in the opposite direction, creating a 3D effect.
+a:hover: Styles the anchor itself when it is hovered. It changes the text color to a dark gray (#272727) when the anchor is hovered.
+In summary, this code creates a visually appealing hover effect for a link, making it appear as if it's lifting off the page with a 3D perspective 
+transformation and blending with the background colors using mix-blend-mode. */
+
+
+
+/* 
+The `perspective` property in CSS is used to apply a 3D perspective transformation to elements. It's often used in combination with other 3D transformations
+like `rotateX`, `rotateY`, and `rotateZ` to create 3D effects and simulate depth in a two-dimensional environment.
+Here's how the `perspective` property works:
+1. **Applying a 3D Space:** When you set `perspective` on a parent element, it establishes a 3D space for all its child elements that have 3D transformations applied.
+The larger the value you set for `perspective`, the stronger the perspective effect will be.
+2. **Distance to the Viewer:** The value you specify for `perspective` represents the distance from the viewer to the z=0 plane (the plane perpendicular to 
+the viewer's line of sight). Smaller values create a stronger perspective effect, making elements appear closer to the viewer. Larger values create a weaker 
+perspective effect, making elements appear farther away.
+3. **Depth Perception:** Elements closer to the viewer (z values near 0) will appear larger, while elements farther from the viewer (z values farther from 0) 
+will appear smaller, simulating depth.
+For example, you might use the `perspective` property like this: */
+
+/* .parent {
+  perspective: 1000px;} */
+/* Sets the perspective to 1000 pixels */
+
+/* .child {
+  transform: rotateY(45deg);}  */
+  /* Applies a 3D rotation */
+
+/* In this example, the `perspective` property is applied to the `.parent` element, establishing a 3D space with a perspective effect.
+Then, when you apply a `rotateY` transformation to a `.child` element within the `.parent`, it will rotate in 3D space, taking into account the perspective 
+defined by the `.parent`'s `perspective` value.
+
+This is commonly used for creating 3D transformations and animations, such as flipping cards, creating 3D carousels, or simulating 3D movement 
+on a 2D screen. */

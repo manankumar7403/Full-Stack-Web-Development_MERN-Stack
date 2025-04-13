@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    padding: 20px 30px;
+    color: #22d2ef;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}   
+
+/* // CREATING PSEUDO ELEMENTS */
+.button::before {
+    content: '';
+    position: absolute;
+    /* So we can move it anywhere relative to the parent -> .button */
+
+    
+    width: 60px;
+    height: 60px;
+    bottom: 8px;
+    left: -4px;
+    background-color: #ff10a8;
+    border-radius: 30px;
+    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    mix-blend-mode: multiply;
+    /* Instead of using z-index such that the text color appears in front of background color, making the text visible -> we can use mix-blend-mode property. */
+    
+    /* The CSS property `mix-blend-mode: multiply;` is used to define how an element's content should blend with the content behind it. In your provided code,
+    it is applied to the `::before` pseudo-element of the `.button` class. Here's what it's doing in this context:
+
+        1. **Setting the Blend Mode:** When you set `mix-blend-mode: multiply;`, it specifies that the content of the element (in this case, the content of
+            the `::before` pseudo-element) should be blended with the content of the elements below it using the "multiply" blending mode.
+
+        2. **Multiply Blending Mode:** In the "multiply" blending mode, the colors of the pixels in the element are multiplied with the colors of the corresponding
+            pixels in the background. This results in a darker and more saturated appearance, as it effectively darkens the underlying background through
+            multiplication.
+
+    The `.button::before` pseudo-element has a background color of `#ff10a8`, and when you apply `mix-blend-mode: multiply;`,
+    it blends with the content behind it (which is the background color or any content of the parent element). As a result, the background color of the
+    pseudo-element interacts with the background, creating a blended effect that might be darker and different from the original color.
+
+    In this specific case, it appears to create an interactive visual effect when you hover over the button (`:hover`) by increasing the width of the
+    pseudo-element and simultaneously changing the background color, giving it a dynamic appearance. */
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button:active::before {
+    background-color: #8f1008;
+}

@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #050505;
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: animate 4s linear infinite;
+}
+/* transform-style: preserve-3d;: Specifies that 3D transformations should be preserved for the cube.
+animation: animate 4s linear infinite;: Applies the "animate" animation to the cube, making it rotate continuously for 4 seconds with a linear timing function. */
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+/* .cube div: Styles applied to the child <div> elements within the "cube." These will be used to create the sides of the cube.
+position: absolute;: Sets the position property to absolute for precise positioning.
+top: 0; left: 0;: Positions the <div> elements at the top-left corner of the cube.
+width: 100%; height: 100%;: Makes each <div> element cover the entire cube.
+transform-style: preserve-3d;: Specifies that 3D transformations should be preserved for these child elements. */
+
+.cube div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, #00ec00);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+    /* 300/2 = 150px */
+}
+/* .cube div span: Styles applied to the <span> elements within each of the four child <div> elements. These <span> elements will create the sides of the cube.
+position: absolute;: Sets the position property to absolute for precise positioning.
+top: 0; left: 0;: Positions the <span> elements at the top-left corner of their respective parent <div>.
+width: 100%; height: 100%;: Makes each <span> element cover the entire side of the cube.
+background: linear-gradient(#151515, #00ec00);: Sets a background gradient for each side of the cube. It goes from a dark gray color (#151515) to a bright
+green color (#00ec00).
+transform: rotateY(calc(90deg * var(--i))) translateZ(150px);: Applies 3D transformations to each <span>. It rotates them around the Y-axis based on the custom
+CSS variable --i, creating different orientations for each side of the cube. It also translates them along the Z-axis, creating depth. */
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+}
+/* Doing this after creating the cube -> then go to html to create "top" class. This adds the black top to the cube */
+/* .top: Styles applied to the "top" class, which is used to create the top face of the cube.
+position: absolute;: Sets the position property to absolute for precise positioning.
+top: 0; left: 0;: Positions the "top" face at the top-left corner of the cube.
+width: 300px; height: 300px;: Sets the width and height of the "top" face to match the cube's dimensions.
+background: #222;: Sets the background color of the "top" face to a dark gray (#222).
+transform: rotateX(90deg) translateZ(150px);: Applies 3D transformations to the "top" face, rotating it 90 degrees around the X-axis to make it the top face of the cube and translating it along
+the Z-axis to create depth. */
+
+.top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #0f0;
+    transform: translateZ(-380px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0, 255, 0, 0.2),
+    0 0 200px rgba(0, 255, 0, 0.4),
+    0 0 300px rgba(0, 255, 0, 0.6),
+    0 0 400px rgba(0, 255, 0, 0.8),
+    0 0 500px rgba(0, 255, 0, 1);
+}
+/* .top::before: Styles applied to the pseudo-element ::before of the "top" class. This pseudo-element is used to create a glowing effect beneath the cube(shadow).
+Basically just like we created the top, we create a similar one but make it appear as a shadow using blur effects.
+content: '';: Adds content to the pseudo-element.
+position: absolute;: Sets the position property to absolute for precise positioning.
+top: 0; left: 0;: Positions the pseudo-element at the top-left corner of the cube.
+width: 300px; height: 300px;: Sets the width and height of the pseudo-element to match the cube's dimensions.
+background: #0f0;: Sets the background color of the pseudo-element to green (#0f0).
+transform: translateZ(-380px);: Translates the pseudo-element along the negative Z-axis to position it beneath the cube.
+filter: blur(20px);: Applies a 20-pixel blur effect to the pseudo-element, creating a soft and glowing appearance. */
+/* (x-offset: horizontal -> shadow will be on the right side of the box), here it is 0 -> directly beneath the element.
+    (y-offset: vertical -> shadow will be below the box), here it is 0 -> directly beneath the element.
+    (negative x-offset: horizontal -> shadow will be on the left side of the box) -> NOT USED HERE
+    (negative y-offset: vertical -> shadow will be on top of the box) -> NOT USED HERE
+    (blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.) -> 120px, 200px, 300px, 400px, 500px making the image
+    more blur as it goes further away from the cube. Less blur at 120px, more at 200px, more at 300px, more at 400px, more at 500px.
+    (spread radius: positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur)) -> NOT USED HERE
+    (color: gives the color): 
+    red and blue are 0 and green is 255 -> full intensity green.
+    0.2, 0.4, 0.6, 0.8, 1 are the alpha values making the shadow more and more transparent.*/
+
+/* REMEMBER (IMP NOTE)-> filter: blur(20px); is used to blur the face that is being projected as the shadow (main).
+                         box-shadow is used to create shadow around the shadow (main) and is blurred more and more as we go further from the shadow (main)
+                         as explained above. */

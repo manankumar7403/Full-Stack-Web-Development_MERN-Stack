@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover 18</title>
+    <link rel="stylesheet" href="ButtonHover_18.css">
+</head>
+<body>
+    <a href="#">Button
+        <span></span>
+    </a>
+</body>
+</html>
+
+<!-- The `<span>` element within the anchor (`<a>`) tag is used to create an additional visual element that is part of the hover animation.
+    Let's break down what the `<span>` element is doing in this code:
+    
+    In the HTML:
+    - `<span></span>`: This is an empty `<span>` element that serves as an additional graphical element within the anchor.
+    
+    In the CSS:
+    
+    ```css
+    a span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff0;
+      border-radius: 8px;
+      transform: scale(0);
+      transition: all 0.3s;
+      z-index: -1;
+    }
+    
+    a:hover span {
+      transform: scale(1);
+      transition-delay: 0.4s;
+    }
+    ```
+    
+    Here's what the `<span>` element is doing step by step:
+    
+    1. `position: absolute;`: This CSS property positions the `<span>` element absolutely within the anchor (`<a>`) element. This means it's placed exactly on top of the anchor.
+    
+    2. `top: 0;` and `left: 0;`: These properties position the top-left corner of the `<span>` element at the top-left corner of the anchor, so it covers the entire anchor.
+    
+    3. `width: 100%;` and `height: 100%;`: These properties make the `<span>` element the same size as the anchor. So, it covers the entire area of the anchor.
+    
+    4. `background-color: #ff0;`: This property sets the background color of the `<span>` element to yellow (#ff0).
+    
+    5. `border-radius: 8px;`: This property rounds the corners of the `<span>` element, giving it a slightly rounded appearance.
+    
+    6. `transform: scale(0);`: This property initially scales down the `<span>` element to 0, effectively making it invisible. It starts with zero size.
+    
+    7. `transition: all 0.3s;`: This property defines a transition effect for all CSS properties with a duration of 0.3 seconds. This means that when a property changes, such as the scale, it will transition smoothly over 0.3 seconds.
+    
+    8. `z-index: -1;`: This property positions the `<span>` element behind the content of the anchor. This is important for layering in CSS.
+    
+    Now, let's explain how the `<span>` element is used in the hover animation:
+    
+    ```css
+    a:hover span {
+      transform: scale(1);
+      transition-delay: 0.4s;
+    }
+    ```
+    
+    - `a:hover span`: This selector targets the `<span>` element when the anchor (`<a>`) is hovered over (`:hover`).
+    
+    - `transform: scale(1);`: This property scales up the `<span>` element to its full size (1), making it visible. This transformation happens when you hover 
+        over the anchor.
+    
+    - `transition-delay: 0.4s;`: This property adds a delay of 0.4 seconds to the transition. This delay creates a timing effect so that the `<span>` element 
+        becomes visible with a slight delay after hovering over the anchor.
+    
+    In summary, the `<span>` element is used to create an additional visual element that is initially hidden (scaled down to zero) and becomes visible with a 
+    scaling effect when you hover over the anchor. This adds a dynamic and visually appealing component to the hover animation. -->

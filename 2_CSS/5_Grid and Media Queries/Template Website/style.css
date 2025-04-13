@@ -1,0 +1,39 @@
+/* For understanding grid-template-areas */
+
+body {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas: 'hd hd hd'
+                         'nv mn ad'
+                         'ft ft ft';
+    /* So, the grid-template-columns: 20% auto 20%; defines that there will be space for 3 columns 20% then auto width then 20% space. So 
+    auto space will take up what's left after taking 20% space on both sides.
+    Then we define grid template areas and we write hd hd hd, meaning header will take up space for all 3 columns at the very top.
+    Then nv will be left(20%), mn will be center(auto) and ad will be right(20%) (all 3 just below header)
+    Then ft ft ft means that footer will take up space of all the 3 columns and will be just below the above 3 (nv, mn, ad) */
+}
+
+.red-box{
+    border: 2px solid red;
+}
+
+header {
+    grid-area: hd;
+}
+
+main {
+    grid-area: mn;
+}
+
+.navigation {
+    grid-area: nv;
+    align-self: flex-start;
+}
+
+.advertisement {
+    grid-area: ad;
+}
+
+footer {
+    grid-area: ft;
+}

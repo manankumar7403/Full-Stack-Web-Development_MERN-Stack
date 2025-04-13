@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble-box {
+    position: relative;
+}
+
+.tea-cup {
+    width: 300px;
+    position: absolute;
+    left: -100px;
+    bottom: -200px;
+}
+
+.bubble {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    animation: bubble-fade 10s infinite;
+    position: absolute;
+    filter: blur(20px);
+    /* blurs the bubble */
+}
+
+.bubble:nth-child(1) {
+    left: 40px;
+    animation-delay: 0.1s;
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(2) {
+    left: 50px;
+    animation-delay: 0.2s;
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(3) {
+    bottom: -60px;
+    right: -50px;
+    animation-delay: 0.3s;
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(4) {
+    top: -60px;
+    right: -50px;
+    animation-delay: 0.1s;
+    animation-duration: 4s;
+}
+
+@keyframes bubble-fade {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        background-color: transparent;
+        transform: scale(2) translateY(-100px);
+        /* - means from down -> up */
+    }
+}
