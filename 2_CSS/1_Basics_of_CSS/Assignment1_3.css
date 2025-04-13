@@ -9,7 +9,6 @@
    - `padding: 0;` and `margin: 0;` set the margin and padding of all elements to zero. This is often used to reset the default
       spacing provided by browsers, ensuring a consistent starting point for styling. */
 
-
 .card {
     width: 530px;
     margin: auto;
