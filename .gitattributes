@@ -1,0 +1,9 @@
+# Force CSS files to be detected
+*.css linguist-detectable=true
+*.css linguist-language=CSS
+*.css text
+
+# Force HTML files to be detected
+*.html linguist-detectable=true
+*.html linguist-language=HTML
+*.html text
